@@ -165,14 +165,14 @@ class MainWindow(QMainWindow):
 
         time.sleep(2)
 
-        # self.create_overlay(
-        #     text="내보내기 셋팅중이에요, 마우스 및 키보드를 절대 건들지 마세요 :)"
-        # )
+        self.create_overlay(
+            text="내보내기 셋팅중이에요, 마우스 및 키보드를 절대 건들지 마세요 :)"
+        )
 
-        # self.state_manager.update_state(
-        #     context="오버레이 실행 완료",
-        #     overlay_running=True,
-        # )
+        self.state_manager.update_state(
+            context="오버레이 실행 완료",
+            overlay_running=True,
+        )
 
         self.thread_lightroom_mornitor.start()
 
