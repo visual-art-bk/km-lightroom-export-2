@@ -9,9 +9,9 @@ from PySide6.QtWidgets import (
     QWidget,
     QApplication,
 )
-from PySide6.QtCore import QThread, Signal, Qt, QMetaObject
+from PySide6.QtCore import Qt
 from state_manager import StateManager, AppState
-from lightroom import LightroomAutomationThread, LightroomLaunchThread
+from lightroom import LightroomAutomationThread
 from ui.overlay.OverlayWindow import OverlayWindow
 from monitorings.LightroomMonitorThread import LightroomMonitorThread
 
@@ -90,22 +90,18 @@ class MainWindow(QMainWindow):
         }
 
     def init_threads(self):
-        self.thread_lightroom_launcher = LightroomLaunchThread()
         self.thread_lightroom_automation = LightroomAutomationThread()
         self.thread_lightroom_mornitor = LightroomMonitorThread()
 
+        self.thread_lightroom_automation.is_run_lightroom.connect(
+            self.on_lightroom_automation_is_run_lightroom
+        )
         self.thread_lightroom_automation.finished.connect(
             self.on_lightroom_automation_finished
-        )
-        self.thread_lightroom_launcher.lightroom_started.connect(
-            self.on_lightroom_launcher_started
         )
         self.thread_lightroom_mornitor.lightroom_closed_mornitoring.connect(
             self.on_lightroom_closed_mornitoring
         )
-
-        self.thread_lightroom_launcher.start()
-        self.thread_lightroom_automation.start()
 
     def run_main_window(self):
         userer_infos = self.get_user_infos()
@@ -130,6 +126,8 @@ class MainWindow(QMainWindow):
 
         self.init_threads()
 
+        self.thread_lightroom_automation.start()
+
     def create_overlay(self, text="마우스 및 키보드를 절대 건들지 마세요 :)"):
         """✅ `overlay_running=True`이면 OverlayWindow 생성"""
         if self.overlay_window is None:
@@ -149,22 +147,58 @@ class MainWindow(QMainWindow):
         else:
             print("해당없음")
 
+    def show_warning(self, text="⚠️ 경고: 잘못된 작업입니다."):
+        msg_box = QMessageBox(self)
+        msg_box.setIcon(QMessageBox.Icon.Information)  # ⚠️ 경고 아이콘
+        msg_box.setWindowTitle("경고")  # 창 제목
+        msg_box.setText(text)  # 메시지 내용
+        msg_box.setStandardButtons(QMessageBox.Ok)  # 확인 버튼 추가
+        msg_box.exec()  # 메시지 박스 실행
 
-    def on_lightroom_automation_finished(self):
+    def on_lightroom_automation_is_run_lightroom(self, is_run_lightroom):
+        if is_run_lightroom == False:
+            self.state_manager.update_state(
+                context="라이트룸이 먼저 실행되지 않았음", lightroom_running=False
+            )
+            self.show_warning("⚠️ 경고: 라이트 룸을 먼저 실행하세요.")
+            return
+
+        time.sleep(2)
+
+        self.create_overlay(
+            text="내보내기 셋팅중이에요, 마우스 및 키보드를 절대 건들지 마세요 :)"
+        )
+
+        self.state_manager.update_state(
+            context="오버레이 실행 완료",
+            overlay_running=True,
+        )
+
+        self.thread_lightroom_mornitor.start()
+
+    def on_lightroom_automation_finished(self, finished):
+        if finished == False:
+            return
         # ✅ 메시지 박스 생성
-        msg_box = QMessageBox(self)  # ✅ 부모 윈도우 설정 (현재 윈도우가 닫혀도 메시지박스 유지)
+        msg_box = QMessageBox(
+            self
+        )  # ✅ 부모 윈도우 설정 (현재 윈도우가 닫혀도 메시지박스 유지)
         msg_box.setIcon(QMessageBox.Icon.Information)  # ℹ️ 정보 아이콘 설정
         msg_box.setWindowTitle("알림")  # 창 제목
-        msg_box.setText("📸 내보내기가 시작됐어요!\n\n"
-                        "⏳ 약 10분 정도 소요됩니다.\n\n"
-                        "✅ '확인' 버튼을 눌러주시고,\n"
-                        "🎨 촬영 소품, 배경지, 리모컨을 정리한 후\n"
-                        "🚶‍♂️ 셀렉실로 이동해주세요.")  # 메시지 내용
+        msg_box.setText(
+            "📸 내보내기가 시작됐어요!\n\n"
+            "⏳ 약 10분 정도 소요됩니다.\n\n"
+            "✅ '확인' 버튼을 눌러주시고,\n"
+            "🎨 촬영 소품, 배경지, 리모컨을 정리한 후\n"
+            "🚶‍♂️ 셀렉실로 이동해주세요."
+        )  # 메시지 내용
 
         msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)  # "확인" 버튼 추가
 
         # ✅ 메시지 박스를 항상 최상위 창으로 설정
-        msg_box.setWindowFlags(Qt.WindowType.Dialog | Qt.WindowType.WindowStaysOnTopHint)
+        msg_box.setWindowFlags(
+            Qt.WindowType.Dialog | Qt.WindowType.WindowStaysOnTopHint
+        )
 
         # ✅ 메시지 박스를 먼저 띄운 후 크기 확정
         msg_box.adjustSize()  # 크기를 자동으로 조정
@@ -175,7 +209,9 @@ class MainWindow(QMainWindow):
         if self.isVisible():  # 메인 윈도우가 존재하면
             parent_geometry = self.frameGeometry()
             msg_box_geometry = msg_box.frameGeometry()
-            msg_box_geometry.moveCenter(parent_geometry.center())  # 메인 윈도우 중앙 좌표로 이동
+            msg_box_geometry.moveCenter(
+                parent_geometry.center()
+            )  # 메인 윈도우 중앙 좌표로 이동
             msg_box.move(msg_box_geometry.topLeft())  # 최종 이동
         else:  # 메인 윈도우가 보이지 않는다면, 화면 정중앙에 배치
             screen_geometry = msg_box.screen().availableGeometry()
@@ -206,29 +242,6 @@ class MainWindow(QMainWindow):
         )
 
         QApplication.quit()  # ✅ `QApplication` 종료 (완전히 종료)
-
-    def on_lightroom_launcher_started(self, success):
-        """✅ Lightroom 실행 완료 후 오버레이 실행"""
-        if success:
-            self.state_manager.update_state(
-                context="Lightroom 실행 완료",
-                lightroom_running=True,
-            )
-
-            time.sleep(2)
-
-            self.create_overlay(text="내보내기 셋팅중이에요, 마우스 및 키보드를 절대 건들지 마세요 :)")
-
-            self.state_manager.update_state(
-                context="오버레이 실행 완료",
-                overlay_running=True,
-            )
-
-            # ✅ Lightroom이 실행되면 종료 감지 스레드 시작
-            self.thread_lightroom_mornitor.start()
-
-        else:
-            print("❌ Lightroom 실행 실패! 오버레이 실행 안 함")
 
     def ON_STATE_CHANGE(self, new_state: AppState):
         """전역 상태 변경 감지 및 UI 반영"""

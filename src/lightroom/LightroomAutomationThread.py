@@ -1,36 +1,63 @@
-from pywinauto import Application
+import time
+import psutil
+from pywinauto import Application, keyboard
 from state_manager.StateManager import StateManager
 from .utils.get_lightroom_win import get_lightroom_win
-from PySide6.QtCore import QThread, Signal
 from lightroom.exports.run_exports import run_exports
+from PySide6.QtCore import QThread, Signal
+
 
 class LightroomAutomationThread(QThread):
     """Lightroom 자동화 실행을 위한 스레드"""
 
     finished = Signal(bool)  # ✅ 성공/실패 여부를 전달하는 시그널
+    is_run_lightroom = Signal(bool)
 
     def __init__(self):
         super().__init__()
 
     def run(self):
-        # ✅ Lightroom 프로세스에 직접 연결
+        """Lightroom 자동화를 실행하는 메인 스레드"""
+        state_manager = StateManager()
+        state = state_manager.get_state()
+
+        # ✅ 1️⃣ Lightroom 실행 여부 확인
+        lightroom_pid = None
+        for process in psutil.process_iter(attrs=["name", "pid", "exe"]):
+            if "Lightroom.exe" in process.info["name"]:
+                lightroom_pid = process.info["pid"]
+                break  # 첫 번째 Lightroom 프로세스 사용
+
+        if not lightroom_pid:
+            print("❌ Lightroom이 실행 중이 아닙니다. 먼저 실행해주세요.")
+            self.is_run_lightroom.emit(False)
+            return
+
+        print(f"✅ Lightroom 실행 감지됨 (PID: {lightroom_pid})")
+        self.is_run_lightroom.emit(True)
+
+        # ✅ 2️⃣ Lightroom 프로세스에 직접 연결
         try:
-            app = Application(backend="uia").connect(
-                path=r"C:\Program Files\Adobe\Adobe Lightroom Classic\Lightroom.exe",
-                timeout=15,  # Lightroom 연결 시도 (최대 15초 대기)
-            )
+            app = Application(backend="uia").connect(process=lightroom_pid, timeout=15)
             print("✅ Lightroom에 성공적으로 연결됨!")
+
+            # ✅ 3️⃣ Lightroom 창 활성화 확인 및 복구
+            lightroom = get_lightroom_win(app)
+            if lightroom.is_minimized():
+                print("🔄 Lightroom 창이 최소화 상태, 복구 중...")
+                lightroom.restore()  # 창 복구
+                time.sleep(3)  # 복구 대기
+
         except Exception as e:
             print(f"❌ Lightroom 연결 실패: {e}")
             self.finished.emit(False)  # ❌ 연결 실패 시그널 발생
             return
 
-        # ✅ Lightroom 창 가져오기
-        lightroom = get_lightroom_win(app)
-        
         try:
+            # ✅ 5️⃣ Lightroom 내보내기 자동화 실행
+            print("🚀 Lightroom 내보내기 자동화 실행 중...")
             run_exports(lightroom=lightroom)
-            
+
             print("✅ Lightroom 자동화 완료 🚀")
             self.finished.emit(True)  # ✅ 자동화 성공 시그널 발생
 
