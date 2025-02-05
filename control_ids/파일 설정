@@ -1,0 +1,21 @@
+
+
+Pane - '파일 설정'    (L713, T523, R1451, B548)
+['파일 설정Pane', 'Pane', '파일 설정', '파일 설정0', '파일 설정1', 'Pane0', 'Pane1']
+child_window(title="파일 설정", auto_id="100", control_type="Pane")
+   | 
+   | Button - ''    (L719, T529, R733, B543)
+   | ['Button']
+   | child_window(auto_id="65535", control_type="Button")
+   | 
+   | Static - '파일 설정'    (L738, T529, R796, B543)
+   | ['파일 설정Static', 'Static', '파일 설정2']
+   | child_window(title="파일 설정", auto_id="-1850405216", control_type="Text")
+   | 
+   | Pane - 'View'    (L796, T525, R1451, B546)
+   | ['View', 'Pane2', 'ViewPane', 'View0', 'View1', 'ViewPane0', 'ViewPane1']
+   | child_window(title="View", auto_id="100", control_type="Pane")
+   |    | 
+   |    | Pane - 'View'    (L796, T529, R1451, B542)
+   |    | ['View2', 'Pane3', 'ViewPane2']
+   |    | child_window(title="View", auto_id="100", control_type="Pane")

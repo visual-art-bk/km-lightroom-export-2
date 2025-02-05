@@ -3,7 +3,7 @@ from lightroom.utils.select_ui import select_ui
 
 
 
-def set_filename(export_window: WindowSpecification):
+def specs_filename(export_window: WindowSpecification):
     try:
         # 내보내기 위치 메뉴 찾고 클릭
         setting_filename = select_ui(
