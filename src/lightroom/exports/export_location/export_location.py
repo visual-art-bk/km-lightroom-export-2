@@ -1,9 +1,6 @@
 import time
 from pywinauto import WindowSpecification
-from lightroom.utils.select_combobox import select_combobox
 from lightroom.utils.select_ui import select_ui
-from lightroom.utils.get_state_legacy import get_state_legacy
-from pywinauto.findwindows import find_element, find_elements
 
 KEYS_SELECT_ALL = "^a"
 KEYS_SELECT_EXPORT = "^+E"

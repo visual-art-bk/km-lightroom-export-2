@@ -9,6 +9,10 @@ from lightroom.exports.specs_filename.specs_filename import specs_filename
 from lightroom.exports.set_file.set_file import set_file
 from lightroom.exports.img_size_adjust.img_size_adjust import img_size_adjust
 
+import ctypes
+import time
+import pyautogui
+
 KEYS_SELECT_ALL = "^a"
 KEYS_SELECT_EXPORT = "^+E"
 CONTROL_TYPE_FILE_MENU = "MenuItem"
@@ -20,10 +24,23 @@ TITLE_EXPORT_PATH = "열기"
 TEXT_DESKTOP = "특정 폴더"
 
 
+
+def lock_input():
+    """✅ 마우스와 키보드 입력을 잠급니다 (Windows 전용)"""
+    ctypes.windll.user32.BlockInput(True)  # 🔒 입력 차단
+    pyautogui.FAILSAFE = False  # ⛔ 마우스 모서리 이동 방지
+
+def unlock_input():
+    """✅ 마우스와 키보드 입력을 다시 활성화합니다"""
+    ctypes.windll.user32.BlockInput(False)  # 🔓 입력 해제
+
+
+
 def run_exports(lightroom: WindowSpecification):
     state_manager = StateManager()
     app_state = state_manager.get_state()
-
+    lock_input()
+    
     # TODO
     # select_all_imgs(win_specs=lightroom)
 
@@ -64,3 +81,5 @@ def run_exports(lightroom: WindowSpecification):
     )
 
     export_button.click_input()
+    
+    unlock_input()
