@@ -1,0 +1,109 @@
+----------------- [📢] 상태 변경 감지:  -----------------
+사용자이름: 
+전화번호: 
+라이트룸 실행여부: 중지
+오버레이 실행여부: 중지
+----------------- [📢] 상태 변경 감지: 사용자정보 올바르게 입력함 -----------------
+사용자이름: sd
+전화번호: sdd
+라이트룸 실행여부: 중지
+오버레이 실행여부: 중지
+✅ Lightroom 실행 감지됨 (PID: 16916)
+✅ Lightroom에 성공적으로 연결됨!
+라이트룸 창 준비완료
+🚀 Lightroom 내보내기 자동화 실행 중...
+✅ 전체 사진 선택 Ctrl + A 실행 - 키값 ^a 전송 성공
+파일(F) 메뉴 클릭 시작..
+✅ 내보내기 단축키 ^+E - 키값 ^+E 전송 성공
+✅ '내보내기' 창 감지 완료!
+파일 이름 지정 메뉴 클릭 시작..
+Control Identifiers:
+
+Pane - '파일 이름 지정'    (L713, T450, R1451, B475)
+['파일 이름 지정', '파일 이름 지정Pane', 'Pane', '파일 이름 지정0', '파일 이름 지정1', 'Pane0', 'Pane1']
+child_window(title="파일 이름 지정", auto_id="100", control_type="Pane")
+   | 
+   | Button - ''    (L719, T456, R733, B470)
+   | ['Button']
+   | child_window(auto_id="65535", control_type="Button")
+   | 
+   | Static - '파일 이름 지정'    (L738, T456, R821, B470)
+   | ['파일 이름 지정2', 'Static', '파일 이름 지정Static']
+   | child_window(title="파일 이름 지정", auto_id="-1638175536", control_type="Text")
+   | 
+   | Pane - 'View'    (L821, T452, R1451, B473)
+   | ['View', 'Pane2', 'ViewPane', 'View0', 'View1', 'ViewPane0', 'ViewPane1']
+   | child_window(title="View", auto_id="100", control_type="Pane")
+   |    | 
+   |    | Pane - 'View'    (L821, T456, R1451, B469)
+   |    | ['View2', 'Pane3', 'ViewPane2']
+   |    | child_window(title="View", auto_id="100", control_type="Pane")
+Collapsible Section 메뉴 클릭 시작..
+Control Identifiers:
+
+Pane - 'Collapsible Section'    (L712, T475, R1452, B578)
+['Collapsible Section', 'Pane', 'Collapsible SectionPane', 'Pane0', 'Pane1']
+child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
+   | 
+   | Pane - '파일 이름 지정'    (L712, T475, R1452, B578)
+   | ['파일 이름 지정', '파일 이름 지정Pane', 'Pane2']
+   | child_window(title="파일 이름 지정", auto_id="100", control_type="Pane")
+   |    | 
+   |    | CheckBox - '바꿀 이름:'    (L737, T487, R869, B503)
+   |    | ['CheckBox', '바꿀 이름:', '바꿀 이름:CheckBox']
+   |    | child_window(title="바꿀 이름:", auto_id="100", control_type="CheckBox")
+   |    | 
+   |    | ComboBox - ''    (L874, T485, R1427, B506)
+   |    | ['ComboBox', 'ComboBox닫기', 'ComboBox0', 'ComboBox1']
+   |    | child_window(auto_id="2134", control_type="ComboBox")
+   |    |    | 
+   |    |    | Static - ''    (L3, T3, R533, B18)
+   |    |    | ['Static', 'Static0', 'Static1']
+   |    |    | 
+   |    |    | Button - '열기'    (L1411, T486, R1426, B505)
+   |    |    | ['열기', '열기Button', 'Button', '열기0', '열기1', '열기Button0', '열기Button1', 'Button0', 'Button1']
+   |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    | 
+   |    | Pane - 'View'    (L737, T517, R1427, B536)
+   |    | ['View', 'Pane3', 'ViewPane']
+   |    | child_window(title="View", auto_id="100", control_type="Pane")
+   |    |    | 
+   |    |    | Static - '사용자 정의 텍스트:'    (L737, T519, R869, B533)
+   |    |    | ['사용자 정의 텍스트:', 'Static2', '사용자 정의 텍스트:Static']
+   |    |    | child_window(title="사용자 정의 텍스트:", auto_id="-2006575984", control_type="Text")
+   |    |    | 
+   |    |    | Static - '시작 번호:'    (L1232, T519, R1364, B533)
+   |    |    | ['Static3', '시작 번호:', '시작 번호:Static']
+   |    |    | child_window(title="시작 번호:", auto_id="-2006568304", control_type="Text")
+   |    |    | 
+   |    |    | Edit - '시작 번호:'    (L1369, T517, R1427, B536)
+   |    |    | ['Edit', '시작 번호:Edit']
+   |    |    | child_window(title="시작 번호:", auto_id="2138", control_type="Edit")
+   |    | 
+   |    | Static - '예:'    (L737, T550, R869, B564)
+   |    | ['예:Static', 'Static4', '예:']
+   |    | child_window(title="예:", auto_id="-2006569840", control_type="Text")
+   |    | 
+   |    | Static - 'pearl-drums-knf81S81xOM-unsplash-1.jpg'    (L874, T550, R1227, B564)
+   |    | ['pearl-drums-knf81S81xOM-unsplash-1.jpgStatic', 'Static5', 'pearl-drums-knf81S81xOM-unsplash-1.jpg']
+   |    | child_window(title="pearl-drums-knf81S81xOM-unsplash-1.jpg", auto_id="-2006549360", control_type="Text")
+   |    | 
+   |    | Static - '확장명:'    (L1232, T550, R1364, B564)
+   |    | ['확장명:Static', 'Static6', '확장명:', '확장명:0', '확장명:1', '확장명:Static0', '확장명:Static1']
+   |    | child_window(title="확장명:", auto_id="-2006569328", control_type="Text")
+   |    | 
+   |    | ComboBox - '확장명:'    (L1369, T546, R1427, B567)
+   |    | ['ComboBox2', '확장명:ComboBox', '확장명:2']
+   |    | child_window(title="확장명:", auto_id="2135", control_type="ComboBox")
+   |    |    | 
+   |    |    | Static - '확장명:'    (L3, T3, R38, B18)
+   |    |    | ['확장명:Static2', 'Static7', '확장명:3']
+   |    |    | child_window(title="확장명:", control_type="Text")
+   |    |    | 
+   |    |    | Button - '열기'    (L1411, T547, R1426, B566)
+   |    |    | ['열기2', '열기Button2', 'Button2']
+   |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+pydevd warning: Computing repr of collapsible_selection (WindowSpecification) was slow (took 0.59s)
+Customize report timeout by setting the `PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT` environment variable to a higher timeout (default is: 0.5s)
+pydevd warning: Computing repr of setting_filename (WindowSpecification) was slow (took 0.61s)
+Customize report timeout by setting the `PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT` environment variable to a higher timeout (default is: 0.5s)

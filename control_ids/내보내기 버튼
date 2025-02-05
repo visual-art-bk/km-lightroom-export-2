@@ -1,0 +1,42 @@
+----------------- [📢] 상태 변경 감지:  -----------------
+사용자이름: 
+전화번호: 
+라이트룸 실행여부: 중지
+오버레이 실행여부: 중지
+----------------- [📢] 상태 변경 감지: 사용자정보 올바르게 입력함 -----------------
+사용자이름: sdssd
+전화번호: sddd
+라이트룸 실행여부: 중지
+오버레이 실행여부: 중지
+✅ Lightroom 실행 감지됨 (PID: 16916)
+✅ Lightroom에 성공적으로 연결됨!
+라이트룸 창 준비완료
+🚀 Lightroom 내보내기 자동화 실행 중...
+✅ 전체 사진 선택 Ctrl + A 실행 - 키값 ^a 전송 성공
+파일(F) 메뉴 클릭 시작..
+✅ 내보내기 단축키 ^+E - 키값 ^+E 전송 성공
+✅ '내보내기' 창 감지 완료!
+내보내기 위치 메뉴 클릭 시작..
+Control Identifiers:
+
+Pane - '내보내기 위치'    (L713, T382, R1451, B407)
+['내보내기 위치', '내보내기 위치Pane', 'Pane', '내보내기 위치0', '내보내기 위치1', 'Pane0', 'Pane1']
+child_window(title="내보내기 위치", auto_id="100", control_type="Pane")
+   | 
+   | Button - ''    (L719, T388, R733, B402)
+   | ['Button']
+   | child_window(auto_id="65535", control_type="Button")
+   | 
+   | Static - '내보내기 위치'    (L738, T388, R818, B402)
+   | ['내보내기 위치Static', '내보내기 위치2', 'Static']
+   | child_window(title="내보내기 위치", auto_id="-1845404576", control_type="Text")
+   | 
+   | Pane - 'View'    (L818, T384, R1451, B405)
+   | ['View', 'ViewPane', 'Pane2', 'View0', 'View1', 'ViewPane0', 'ViewPane1']
+   | child_window(title="View", auto_id="100", control_type="Pane")
+   |    | 
+   |    | Pane - 'View'    (L818, T388, R1451, B401)
+   |    | ['View2', 'ViewPane2', 'Pane3']
+   |    | child_window(title="View", auto_id="100", control_type="Pane")
+pydevd warning: Computing repr of export_path (WindowSpecification) was slow (took 0.58s)
+Customize report timeout by setting the `PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT` environment variable to a higher timeout (default is: 0.5s)
