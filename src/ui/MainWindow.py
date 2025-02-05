@@ -24,7 +24,7 @@ class MainWindow(QMainWindow):
 
         self.init_state_manager()
 
-        self.setWindowTitle("라이트룸 촬영 매니저")
+        self.setWindowTitle("다비 내보내기 V.1.0")
 
         self.init_window_position(
             height=height, x=x, screen_width=self.get_screen_width(), width=width, y=y
@@ -51,7 +51,7 @@ class MainWindow(QMainWindow):
         self.phone_number_entry = QLineEdit()
         layout.addWidget(self.phone_number_entry)
 
-        self.run_button = QPushButton("Lightroom 실행")
+        self.run_button = QPushButton("📁 내보내기 시작")
         self.run_button.clicked.connect(self.run_main_window)
         layout.addWidget(self.run_button)
 
