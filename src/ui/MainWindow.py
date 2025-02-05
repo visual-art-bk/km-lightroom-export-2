@@ -1,3 +1,4 @@
+import os
 import time
 from PySide6.QtWidgets import (
     QMainWindow,
@@ -253,3 +254,49 @@ class MainWindow(QMainWindow):
         print(f"라이트룸 실행여부: {'실행' if new_state.lightroom_running else '중지'}")
         print(f"오버레이 실행여부: {'실행' if new_state.overlay_running else '중지'}")
         print(f"                                                      ")
+
+    def closeEvent(self, event):
+        self.cleanup_and_exit()
+        event.accept()  # 창 닫기 허용
+
+    def cleanup_and_exit(self):
+        """💡 프로그램 종료 전 모든 리소스를 완전히 정리하는 함수"""
+        print("🔄 모든 리소스 정리 중...")
+
+        # ✅ 1. 스레드 강제 종료 (QThread가 완전히 종료되었는지 확인)
+        if self.thread_lightroom_automation:
+            if self.thread_lightroom_automation.isRunning():
+                print("⚠️ Lightroom 자동화 스레드 강제 종료")
+                self.thread_lightroom_automation.terminate()
+            self.thread_lightroom_automation.quit()
+            self.thread_lightroom_automation.wait()
+            self.thread_lightroom_automation = None
+
+        if self.thread_lightroom_monitor:
+            if self.thread_lightroom_monitor.isRunning():
+                print("⚠️ Lightroom 모니터링 스레드 강제 종료")
+                self.thread_lightroom_monitor.terminate()
+            self.thread_lightroom_monitor.quit()
+            self.thread_lightroom_monitor.wait()
+            self.thread_lightroom_monitor = None
+
+        # ✅ 2. 오버레이 정리 (UI 리소스 해제)
+        if self.overlay_window:
+            self.overlay_window.close()
+            self.overlay_window.deleteLater()
+            self.overlay_window = None
+        OverlayWindow._instance = None  # 싱글톤 인스턴스 초기화
+
+        # ✅ 3. 상태 관리자 해제
+        self.state_manager = None
+
+        # ✅ 4. UI 창 닫기
+        self.close()
+        self.deleteLater()  # UI 객체를 명시적으로 제거
+
+        # ✅ 5. QApplication 완전 종료
+        QApplication.quit()
+
+        # ✅ 6. **운영체제 프로세스 강제 종료 (최후의 수단)**
+        print("🚀 모든 리소스 해제 완료 → 시스템 프로세스 강제 종료")
+        os._exit(0)  # 💀 시스템 차원에서 프로세스 완전 제거
