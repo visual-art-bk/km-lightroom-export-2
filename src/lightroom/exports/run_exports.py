@@ -39,8 +39,7 @@ def run_exports(lightroom: WindowSpecification, lock_user_input=True):
     state_manager = StateManager()
     app_state = state_manager.get_state()
     
-    if lock_user_input == True:
-        lock_input()
+    lock_input()
 
     # 전체 사진 단축키로 선택
     send_shortcuts(
@@ -80,5 +79,4 @@ def run_exports(lightroom: WindowSpecification, lock_user_input=True):
 
     export_button.click_input()
     
-    if lock_user_input == True:
-        unlock_input()
+    unlock_input()

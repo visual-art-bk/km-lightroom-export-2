@@ -25,7 +25,7 @@ class MainWindow(QMainWindow):
 
         self.lock_user_input = lock_user_input
         
-        self.overlay_window = overlay_mode
+        self.overlay_mode = overlay_mode
 
         self.init_state_manager()
 
@@ -172,7 +172,7 @@ class MainWindow(QMainWindow):
 
         time.sleep(2)
 
-        if self.overlay_window == True:
+        if self.overlay_mode == True:
             self.create_overlay(
                 text="내보내기 셋팅중이에요, 마우스 및 키보드를 절대 건들지 마세요 :)"
             )
