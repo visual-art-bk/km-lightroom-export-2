@@ -9,26 +9,23 @@ def select_ui(
     timeout=0.1,
     found_index=0,
 ) -> WindowSpecification:
-    try:
-        print(f"{title} 메뉴 클릭 시작..")
-        if found_index != 0:
 
-            ui = win_specs.child_window(title=title, control_type=control_type)
-        else:
+    print(f"{title} 메뉴 클릭 시작..")
+    if found_index != 0:
 
-            ui = win_specs.child_window(
-                title=title, control_type=control_type, found_index=found_index
-            )
+        ui = win_specs.child_window(title=title, control_type=control_type)
+    else:
 
-        # ✅ 5초 동안 0.5초 간격으로 메뉴 확인 → 즉시 감지 가능
-        for _ in range(10):
-            if ui.exists():
+        ui = win_specs.child_window(
+            title=title, control_type=control_type, found_index=found_index
+        )
 
-                return ui
-            time.sleep(timeout)
+    # ✅ 5초 동안 0.5초 간격으로 메뉴 확인 → 즉시 감지 가능
+    for _ in range(10):
+        if ui.exists():
 
-        print(f"🚨 {title}  메뉴가 존재하지 않음!")
-        raise RuntimeError(f"{title}  메뉴를 찾을 수 없습니다.")
+            return ui
+        time.sleep(timeout)
 
-    except Exception as e:
-        print(f"❌{title}  메뉴 클릭 실패: {e}")
+    print(f"🚨 {title}  메뉴가 존재하지 않음!")
+    return None

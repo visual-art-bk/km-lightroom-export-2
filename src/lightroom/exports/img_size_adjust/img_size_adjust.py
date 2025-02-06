@@ -1,23 +1,27 @@
 from pywinauto import WindowSpecification
 from lightroom.utils.select_ui import select_ui
-from lightroom.utils.check_collapsible_menu import check_collapsible_menu
+from lightroom.utils.check_export_option import check_export_option
+from lightroom.utils.check_toggle import check_toggle
 
 
 def img_size_adjust(export_window: WindowSpecification):
-    size_adjust = select_ui(
+
+    (
+        collapsible_selection,
+        export_opt_of_col,
+    ) = check_export_option(
+        win_specs=export_window, export_opt_title="이미지 크기 조정"
+    )
+
+    export_opt_of_window = select_ui(
         win_specs=export_window,
         control_type="Pane",
         title="이미지 크기 조정",
         found_index=0,
     )
-    
-    collapsible = check_collapsible_menu(win_specs=export_window)
 
-    if collapsible == None:
-        print("콜랩서블 메뉴 존재X => 사진 크기기 옵션 메뉴 클릭시작.")
-        size_adjust.click_input()
-
-
+    if export_opt_of_col == None:
+        export_opt_of_window.click_input()
 
     collapsible_selection = select_ui(
         found_index=0,
@@ -32,9 +36,9 @@ def img_size_adjust(export_window: WindowSpecification):
         found_index=0,
         title="크기 조정하여 맞추기:",
     )
-    # 토글 대신
-    checkbox.click_input()
-    checkbox.click_input()
+    toggle_state = check_toggle(win_specs=checkbox)
+    if toggle_state == False:
+        checkbox.click()
 
     edit_width = select_ui(
         win_specs=collapsible_selection,
@@ -67,4 +71,4 @@ def img_size_adjust(export_window: WindowSpecification):
     resolution.set_text("360")
 
     # 토글 대신
-    size_adjust.click_input()
+    export_opt_of_window.click_input()

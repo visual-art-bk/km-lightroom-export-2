@@ -1,0 +1,104 @@
+----------------- [📢] 상태 변경 감지:  -----------------
+사용자이름: 
+전화번호: 
+라이트룸 실행여부: 중지
+오버레이 실행여부: 중지
+----------------- [📢] 상태 변경 감지: 사용자정보 올바르게 입력함 -----------------
+사용자이름: sds
+전화번호: sdsad
+라이트룸 실행여부: 중지
+오버레이 실행여부: 중지
+✅ Lightroom 실행 감지됨 (PID: 7180)
+✅ Lightroom에 성공적으로 연결됨!
+----------------- [📢] 상태 변경 감지: 오버레이 실행 완료 -----------------
+사용자이름: sds
+전화번호: sdsad
+라이트룸 실행여부: 중지
+오버레이 실행여부: 실행
+라이트룸 창 준비완료
+🚀 Lightroom 내보내기 자동화 실행 중...
+✅ 전체 사진 선택 Ctrl + A 실행 - 키값 ^a 전송 성공
+파일(F) 메뉴 클릭 시작..
+✅ 내보내기 단축키 ^+E - 키값 ^+E 전송 성공
+✅ '내보내기' 창 감지 완료!
+Collapsible Section 메뉴 클릭 시작..
+Control Identifiers:
+
+Pane - 'Collapsible Section'    (L712, T371, R1452, B530)
+['Pane', 'Collapsible SectionPane', 'Collapsible Section', 'Pane0', 'Pane1']
+child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
+   | 
+   | Pane - '내보내기 위치'    (L712, T371, R1452, B530)
+   | ['Pane2', '내보내기 위치Pane', '내보내기 위치']
+   | child_window(title="내보내기 위치", auto_id="100", control_type="Pane")
+   |    | 
+   |    | Static - '내보낼 위치:'    (L737, T385, R869, B399)
+   |    | ['Static', '내보낼 위치:', '내보낼 위치:Static', '내보낼 위치:0', '내보낼 위치:1', 'Static0', 'Static1', '내보낼 위치:Static0', '내보낼 위치:Static1']
+   |    | child_window(title="내보낼 위치:", auto_id="572193920", control_type="Text")
+   |    | 
+   |    | ComboBox - '내보낼 위치:'    (L874, T381, R1427, B402)
+   |    | ['내보낼 위치:2', '내보낼 위치:ComboBox', 'ComboBox', 'ComboBox0', 'ComboBox1']
+   |    | child_window(title="내보낼 위치:", auto_id="65535", control_type="ComboBox")
+   |    |    | 
+   |    |    | Static - '내보낼 위치:'    (L3, T3, R533, B18)
+   |    |    | ['Static2', '내보낼 위치:3', '내보낼 위치:Static2']
+   |    |    | child_window(title="내보낼 위치:", control_type="Text")
+   |    |    | 
+   |    |    | Button - '열기'    (L1411, T382, R1426, B401)
+   |    |    | ['열기', '열기Button', 'Button', '열기0', '열기1', '열기Button0', '열기Button1', 'Button0', 'Button1']
+   |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    | 
+   |    | Static - '폴더:'    (L737, T415, R869, B429)
+   |    | ['Static3', '폴더:', '폴더:Static']
+   |    | child_window(title="폴더:", auto_id="572212352", control_type="Text")
+   |    | 
+   |    | Static - 'C:\Users\CafeAlle\Desktop'    (L874, T415, R1427, B429)
+   |    | ['Static4', 'C:\\Users\\CafeAlle\\Desktop', 'C:\\Users\\CafeAlle\\DesktopStatic']
+   |    | child_window(title="C:\Users\CafeAlle\Desktop", auto_id="572215424", control_type="Text")
+   |    | 
+   |    | CheckBox - '하위 폴더에 넣기:'    (L874, T441, R984, B457)
+   |    | ['하위 폴더에 넣기:CheckBox', '하위 폴더에 넣기:', 'CheckBox', 'CheckBox0', 'CheckBox1']
+   |    | child_window(title="하위 폴더에 넣기:", auto_id="100", control_type="CheckBox")
+   |    | 
+   |    | Edit - ''    (L989, T441, R1427, B460)
+   |    | ['C:\\Users\\CafeAlle\\DesktopEdit', 'Edit']
+   |    | child_window(auto_id="65535", control_type="Edit")
+   |    | 
+   |    | CheckBox - '이 카탈로그에 추가'    (L874, T468, R990, B484)
+   |    | ['이 카탈로그에 추가CheckBox', 'CheckBox2', '이 카탈로그에 추가']
+   |    | child_window(title="이 카탈로그에 추가", auto_id="100", control_type="CheckBox")
+   |    | 
+   |    | CheckBox - '스택에 추가:'    (L1030, T468, R1114, B484)
+   |    | ['스택에 추가:', 'CheckBox3', '스택에 추가:CheckBox']
+   |    | child_window(title="스택에 추가:", auto_id="100", control_type="CheckBox")
+   |    | 
+   |    | ComboBox - ''    (L1119, T466, R1191, B487)
+   |    | ['ComboBox2', 'C:\\Users\\CafeAlle\\DesktopComboBox']
+   |    | child_window(auto_id="65535", control_type="ComboBox")
+   |    |    | 
+   |    |    | Static - ''    (L3, T3, R52, B18)
+   |    |    | ['Static5']
+   |    |    | 
+   |    |    | Button - '열기'    (L1175, T467, R1190, B486)
+   |    |    | ['열기2', '열기Button2', 'Button2']
+   |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+   |    | 
+   |    | Static - '기존 파일:'    (L737, T502, R869, B516)
+   |    | ['Static6', '기존 파일:Static', '기존 파일:', '기존 파일:0', '기존 파일:1', '기존 파일:Static0', '기존 파일:Static1']
+   |    | child_window(title="기존 파일:", auto_id="572216448", control_type="Text")
+   |    | 
+   |    | ComboBox - '기존 파일:'    (L874, T498, R1032, B519)
+   |    | ['기존 파일:2', 'ComboBox3', '기존 파일:ComboBox']
+   |    | child_window(title="기존 파일:", auto_id="65535", control_type="ComboBox")
+   |    |    | 
+   |    |    | Static - '기존 파일:'    (L3, T3, R138, B18)
+   |    |    | ['Static7', '기존 파일:Static2', '기존 파일:3']
+   |    |    | child_window(title="기존 파일:", control_type="Text")
+   |    |    | 
+   |    |    | Button - '열기'    (L1016, T499, R1031, B518)
+   |    |    | ['열기3', '열기Button3', 'Button3']
+   |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
+pydevd warning: Computing repr of collapsible_selection (WindowSpecification) was slow (took 0.98s)
+Customize report timeout by setting the `PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT` environment variable to a higher timeout (default is: 0.5s)
+pydevd warning: Computing repr of win_specs (WindowSpecification) was slow (took 0.86s)
+Customize report timeout by setting the `PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT` environment variable to a higher timeout (default is: 0.5s)

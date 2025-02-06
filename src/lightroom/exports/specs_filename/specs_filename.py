@@ -1,19 +1,26 @@
 from pywinauto import  WindowSpecification
 from lightroom.utils.select_ui import select_ui
-from lightroom.utils.check_collapsible_menu import check_collapsible_menu
-
+from lightroom.utils.check_export_option import check_export_option
+from lightroom.utils.check_toggle import check_toggle
 
 
 def specs_filename(export_window: WindowSpecification):
-    setting_filename = select_ui(
-            win_specs=export_window, control_type="Pane", title="파일 이름 지정"
+    
+    (
+        collapsible_selection,
+        export_opt_of_col,
+    ) = check_export_option(win_specs=export_window, export_opt_title="파일 이름 지정")
+    
+    export_opt_of_window = select_ui(
+            win_specs=export_window,
+            control_type="Pane",
+            title="파일 이름 지정",
+            found_index=0,
         )
     
-    collapsible = check_collapsible_menu(win_specs=export_window)
-
-    if collapsible == None:
-        print("콜랩서블 메뉴 존재X => 파일이름 지정하기기 옵션 메뉴 클릭시작.")
-        setting_filename.click_input()
+    if export_opt_of_col == None:
+        export_opt_of_window.click_input()
+      
 
     collapsible_selection = select_ui(
         found_index=0,
@@ -27,9 +34,9 @@ def specs_filename(export_window: WindowSpecification):
         title="바꿀 이름:",
         win_specs=collapsible_selection,
     )
-    # 현재 토글 대신
-    checkbox.click_input()
-    checkbox.click_input()
+    toggle_state = check_toggle(win_specs=checkbox)
+    if toggle_state == False:
+        checkbox.click()
 
     combobox = collapsible_selection.child_window(
         control_type="ComboBox", found_index=0
@@ -46,4 +53,4 @@ def specs_filename(export_window: WindowSpecification):
     edit_field.set_text("")
     edit_field.set_text("필터")
 
-    setting_filename.click_input()
+    export_opt_of_window.click_input()
