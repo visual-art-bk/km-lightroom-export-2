@@ -13,8 +13,9 @@ class LightroomAutomationThread(QThread):
     finished = Signal(bool)  # ✅ 성공/실패 여부를 전달하는 시그널
     is_run_lightroom = Signal(bool)
 
-    def __init__(self):
+    def __init__(self, lock_user_input):
         super().__init__()
+        self.lock_user_input = lock_user_input
 
     def run(self):
         """Lightroom 자동화를 실행하는 메인 스레드"""
@@ -56,7 +57,7 @@ class LightroomAutomationThread(QThread):
         try:
             # ✅ 5️⃣ Lightroom 내보내기 자동화 실행
             print("🚀 Lightroom 내보내기 자동화 실행 중...")
-            run_exports(lightroom=lightroom)
+            run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
 
             print("✅ Lightroom 자동화 완료 🚀")
             self.finished.emit(True)  # ✅ 자동화 성공 시그널 발생

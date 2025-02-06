@@ -7,7 +7,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
 
     # ✅ MainWindow 생성
-    main_window = MainWindow(y=100)
+    main_window = MainWindow(overlay_mode=True, lock_user_input=True, y=100)
     main_window.show()
 
     # ✅ 메인 윈도우가 숨겨져도 프로그램이 종료되지 않도록 설정

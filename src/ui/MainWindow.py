@@ -20,8 +20,12 @@ from monitorings.LightroomMonitorThread import LightroomMonitorThread
 class MainWindow(QMainWindow):
     """Lightroom 실행 GUI"""
 
-    def __init__(self, x=None, y=0, width=300, height=200):
+    def __init__(self, x=None, y=0, width=300, height=200, lock_user_input=True, overlay_mode=True):
         super().__init__()
+
+        self.lock_user_input = lock_user_input
+        
+        self.overlay_window = overlay_mode
 
         self.init_state_manager()
 
@@ -91,7 +95,9 @@ class MainWindow(QMainWindow):
         }
 
     def init_threads(self):
-        self.thread_lightroom_automation = LightroomAutomationThread()
+        self.thread_lightroom_automation = LightroomAutomationThread(
+            lock_user_input=self.lock_user_input
+        )
         self.thread_lightroom_mornitor = LightroomMonitorThread()
 
         self.thread_lightroom_automation.is_run_lightroom.connect(
@@ -166,9 +172,10 @@ class MainWindow(QMainWindow):
 
         time.sleep(2)
 
-        self.create_overlay(
-            text="내보내기 셋팅중이에요, 마우스 및 키보드를 절대 건들지 마세요 :)"
-        )
+        if self.overlay_window == True:
+            self.create_overlay(
+                text="내보내기 셋팅중이에요, 마우스 및 키보드를 절대 건들지 마세요 :)"
+            )
 
         self.state_manager.update_state(
             context="오버레이 실행 완료",
@@ -232,7 +239,7 @@ class MainWindow(QMainWindow):
             overlay_running=False,
         )
 
-        self.hide()
+        self.cleanup_and_exit()
 
     def on_lightroom_closed_mornitoring(self):
         print("✅ Lightroom 종료 감지 → 프로그램 종료")
@@ -241,6 +248,8 @@ class MainWindow(QMainWindow):
             context="Lightroom 종료 → 프로그램 종료",
             lightroom_running=False,
         )
+
+        self.cleanup_and_exit()
 
         QApplication.quit()  # ✅ `QApplication` 종료 (완전히 종료)
 
@@ -255,10 +264,6 @@ class MainWindow(QMainWindow):
         print(f"오버레이 실행여부: {'실행' if new_state.overlay_running else '중지'}")
         print(f"                                                      ")
 
-    def closeEvent(self, event):
-        self.cleanup_and_exit()
-        event.accept()  # 창 닫기 허용
-
     def cleanup_and_exit(self):
         """💡 프로그램 종료 전 모든 리소스를 완전히 정리하는 함수"""
         print("🔄 모든 리소스 정리 중...")
@@ -272,13 +277,13 @@ class MainWindow(QMainWindow):
             self.thread_lightroom_automation.wait()
             self.thread_lightroom_automation = None
 
-        if self.thread_lightroom_monitor:
-            if self.thread_lightroom_monitor.isRunning():
+        if self.thread_lightroom_mornitor:
+            if self.thread_lightroom_mornitor.isRunning():
                 print("⚠️ Lightroom 모니터링 스레드 강제 종료")
-                self.thread_lightroom_monitor.terminate()
-            self.thread_lightroom_monitor.quit()
-            self.thread_lightroom_monitor.wait()
-            self.thread_lightroom_monitor = None
+                self.thread_lightroom_mornitor.terminate()
+            self.thread_lightroom_mornitor.quit()
+            self.thread_lightroom_mornitor.wait()
+            self.thread_lightroom_mornitor = None
 
         # ✅ 2. 오버레이 정리 (UI 리소스 해제)
         if self.overlay_window:

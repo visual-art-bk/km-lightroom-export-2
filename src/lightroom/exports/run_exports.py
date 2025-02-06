@@ -10,7 +10,6 @@ from lightroom.exports.set_file.set_file import set_file
 from lightroom.exports.img_size_adjust.img_size_adjust import img_size_adjust
 
 import ctypes
-import time
 import pyautogui
 
 KEYS_SELECT_ALL = "^a"
@@ -36,13 +35,12 @@ def unlock_input():
 
 
 
-def run_exports(lightroom: WindowSpecification):
+def run_exports(lightroom: WindowSpecification, lock_user_input=True):
     state_manager = StateManager()
     app_state = state_manager.get_state()
-    lock_input()
     
-    # TODO
-    # select_all_imgs(win_specs=lightroom)
+    if lock_user_input == True:
+        lock_input()
 
     # 전체 사진 단축키로 선택
     send_shortcuts(
@@ -82,4 +80,5 @@ def run_exports(lightroom: WindowSpecification):
 
     export_button.click_input()
     
-    unlock_input()
+    if lock_user_input == True:
+        unlock_input()

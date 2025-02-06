@@ -1,22 +1,20 @@
 from pywinauto import WindowSpecification
 from lightroom.utils.select_ui import select_ui
+from lightroom.utils.check_collapsible_menu import check_collapsible_menu
 
 
 def set_file(export_window: WindowSpecification):
-    try:
-        # 내보내기 위치 메뉴 찾고 클릭
-        set_file = select_ui(
-            win_specs=export_window,
-            control_type="Pane",
-            title="파일 설정",
-            found_index=0,
-        )
+    set_file = select_ui(
+        win_specs=export_window,
+        control_type="Pane",
+        title="파일 설정",
+        found_index=0,
+    )
+    collapsible = check_collapsible_menu(win_specs=export_window)
+
+    if collapsible == None:
+        print("콜랩서블 메뉴 존재X => 파일설정정 옵션 메뉴 클릭시작.")
         set_file.click_input()
-
-        set_file.print_control_identifiers()
-
-    except Exception:
-        print("파일 이름 지정이이 열려있음 다음으로 넘어갑니다.")
 
     collapsible_selection = select_ui(
         found_index=0,

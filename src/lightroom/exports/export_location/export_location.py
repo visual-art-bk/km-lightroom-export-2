@@ -1,6 +1,7 @@
 import time
 from pywinauto import WindowSpecification
 from lightroom.utils.select_ui import select_ui
+from lightroom.utils.check_collapsible_menu import check_collapsible_menu
 
 KEYS_SELECT_ALL = "^a"
 KEYS_SELECT_EXPORT = "^+E"
@@ -14,25 +15,20 @@ TEXT_DESKTOP = "특정 폴더"
 
 
 def export_location(export_window: WindowSpecification, app_state):
-    try:
-        # 내보내기 위치 메뉴 찾고 클릭
-        export_path = select_ui(
-            win_specs=export_window,
-            control_type="Pane",
-            title="내보내기 위치",
-            found_index=0,
-        )
+    export_path = select_ui(
+        win_specs=export_window,
+        control_type="Pane",
+        title="내보내기 위치",
+        found_index=0,
+    )
+
+    collapsible = check_collapsible_menu(win_specs=export_window)
+
+    if collapsible == None:
+        print("콜랩서블 메뉴 존재X => 내보내기 옵션 메뉴 클릭시작.")
         export_path.click_input()
 
-    except Exception:
-        print("내보내기 위치가 열려있음 다음으로 넘어갑니다.")
-
-    collapsible_selection = select_ui(
-        found_index=0,
-        control_type="Pane",
-        title="Collapsible Section",
-        win_specs=export_window,
-    )
+    collapsible_selection = check_collapsible_menu(win_specs=export_window)
 
     combobox = select_ui(
         win_specs=collapsible_selection,
@@ -40,6 +36,7 @@ def export_location(export_window: WindowSpecification, app_state):
         control_type="ComboBox",
         found_index=0,
     )
+
     combobox.select(TEXT_DESKTOP)
 
     checkbox_sub_folder = select_ui(
