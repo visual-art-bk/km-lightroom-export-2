@@ -2,6 +2,7 @@ import time
 from pywinauto import WindowSpecification
 from lightroom.utils.select_ui import select_ui
 from lightroom.utils.check_collapsible_menu import check_collapsible_menu
+from lightroom.utils.check_toggle import check_toggle
 
 KEYS_SELECT_ALL = "^a"
 KEYS_SELECT_EXPORT = "^+E"
@@ -26,7 +27,7 @@ def export_location(export_window: WindowSpecification, app_state):
 
     if collapsible == None:
         print("콜랩서블 메뉴 존재X => 내보내기 옵션 메뉴 클릭시작.")
-        export_path.click_input()
+        export_path.click()
 
     collapsible_selection = check_collapsible_menu(win_specs=export_window)
 
@@ -45,9 +46,10 @@ def export_location(export_window: WindowSpecification, app_state):
         win_specs=export_window,
     )
 
-    # 현재 토글 기능 대신
-    checkbox_sub_folder.click()
-    checkbox_sub_folder.click()
+
+    toggle_state = check_toggle(win_specs=checkbox_sub_folder)
+    if toggle_state == False:
+        checkbox_sub_folder.click()
 
     edit_field = export_window.child_window(control_type="Edit", found_index=0)
 
