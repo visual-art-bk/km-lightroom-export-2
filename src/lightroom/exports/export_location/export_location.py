@@ -4,9 +4,6 @@ from lightroom.utils.select_ui import select_ui
 from lightroom.utils.check_export_option import check_export_option
 from lightroom.utils.check_toggle import check_toggle
 
-KEYS_SELECT_ALL = "^a"
-KEYS_SELECT_EXPORT = "^+E"
-CONTROL_TYPE_FILE_MENU = "MenuItem"
 CONTROL_TYPE_CHECKBOX = "CheckBox"
 CONTROL_TYPE_EXPORT_PATH = "Button"
 TITLE_FILE_MENU = "파일(F)"
@@ -24,15 +21,19 @@ def set_desktop_folder(
     select_btn.click_input()
 
     desktop_path = export_window.child_window(
-        title="Desktop(고정됨)", control_type="TreeItem", found_index=0
+        title_re=".*고정됨.*", control_type="TreeItem", found_index=0
     )
     desktop_path.click_input()
-    
-    folder_name_edit = export_window.child_window(title="폴더:", control_type="Edit", found_index=0)
+
+    folder_name_edit = export_window.child_window(
+        title="폴더:", control_type="Edit", found_index=0
+    )
     folder_name_edit.set_text("")
     folder_name_edit.set_text("사진 저장")
-    
-    folder_select_btn = export_window.child_window(title="폴더 선택",control_type="Button", found_index=0)
+
+    folder_select_btn = export_window.child_window(
+        title="폴더 선택", control_type="Button", found_index=0
+    )
     folder_select_btn.click_input()
 
 
