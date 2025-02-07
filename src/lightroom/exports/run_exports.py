@@ -69,19 +69,19 @@ def run_exports(lightroom: WindowSpecification, lock_user_input=True):
 
     export_location(export_window=export_window, app_state=app_state)
 
-    specs_filename(export_window=export_window)
+    # specs_filename(export_window=export_window)
 
-    # 내보내기에 필요한 메뉴 아니지만,
-    # 자동화 시야를 가리기 때문에 메뉴 닫음.
-    collapse_video_opt(export_window=export_window)
+    # # 내보내기에 필요한 메뉴 아니지만,
+    # # 자동화 시야를 가리기 때문에 메뉴 닫음.
+    # collapse_video_opt(export_window=export_window)
 
-    set_file(export_window=export_window)
+    # set_file(export_window=export_window)
 
-    # 내보내기에 필요한 메뉴 아니지만,
-    # 자동화 시야를 가리기 때문에 메뉴 닫음.
-    collapse_credentials_opt(export_window=export_window)
+    # # 내보내기에 필요한 메뉴 아니지만,
+    # # 자동화 시야를 가리기 때문에 메뉴 닫음.
+    # collapse_credentials_opt(export_window=export_window)
 
-    img_size_adjust(export_window=export_window)
+    # img_size_adjust(export_window=export_window)
 
     export_button = export_window.child_window(
         title="내보내기", auto_id="1", control_type="Button"
@@ -89,9 +89,14 @@ def run_exports(lightroom: WindowSpecification, lock_user_input=True):
 
     export_button.click_input()
 
-    use_identified_name_save = lightroom.child_window(
+    try:
+        use_identified_name_save = lightroom.child_window(
         title="고유한 이름 사용", control_type="Button", found_index=0
     )
-    use_identified_name_save.click()
+        use_identified_name_save.click()
+
+    except:
+        print('고유한 이름 사용 - 창이 존재하지 않으므로 클릭하지 않습니다.')
+
 
     # unlock_input()

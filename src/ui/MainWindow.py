@@ -20,11 +20,19 @@ from monitorings.LightroomMonitorThread import LightroomMonitorThread
 class MainWindow(QMainWindow):
     """Lightroom 실행 GUI"""
 
-    def __init__(self, x=None, y=0, width=300, height=200, lock_user_input=True, overlay_mode=True):
+    def __init__(
+        self,
+        x=None,
+        y=0,
+        width=300,
+        height=200,
+        lock_user_input=True,
+        overlay_mode=True,
+    ):
         super().__init__()
 
         self.lock_user_input = lock_user_input
-        
+
         self.overlay_mode = overlay_mode
 
         self.init_state_manager()
@@ -32,7 +40,8 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("다비 내보내기 V.2.0")
 
         self.init_window_position(
-            height=height, x=x, screen_width=self.get_screen_width(), width=width, y=y
+            height=height,
+            width=width,
         )
 
         self.init_window_layout()
@@ -68,16 +77,23 @@ class MainWindow(QMainWindow):
         self.state_manager = StateManager()
         self.state_manager.subscribe(self.ON_STATE_CHANGE)  # 상태 변경 구독
 
-    def init_window_position(self, x, y, width, height, screen_width):
-        # 항상 최상단에 고정
-        self.setWindowFlags(Qt.WindowStaysOnTopHint)
+    def init_window_position(self, width, height):
+        """✅ 창을 화면 정중앙 (상하 & 좌우) 정렬"""
 
-        # ✅ 사용자가 x를 설정하지 않으면 기본값으로 "우측 상단" 위치 지정
-        if x is None:
-            x = screen_width - width  # 우측 끝으로 정렬
+        # ✅ 현재 화면의 해상도 가져오기
+        screen_geometry = self.screen().availableGeometry()
+        screen_width = screen_geometry.width()
+        screen_height = screen_geometry.height()
 
-        # ✅ 창의 초기 위치 및 크기 설정 (기본값: 화면 우측 상단)
+        # ✅ 창을 화면 정중앙에 배치 (좌우 & 상하)
+        x = (screen_width - width) // 2  # 좌우 정가운데
+        y = (screen_height - height) // 2  # 상하 정가운데
+
+        # ✅ 창의 위치 및 크기 설정
         self.setGeometry(x, y, width, height)
+
+        # ✅ 창을 항상 최상단에 고정
+        self.setWindowFlags(Qt.WindowStaysOnTopHint)
 
     def get_screen_width(self):
         # 현재 화면 크기 가져오기
@@ -125,6 +141,8 @@ class MainWindow(QMainWindow):
             )
             return
 
+        self.hide()
+
         self.state_manager.update_state(
             phone_number=phone_number,
             username=username,
@@ -135,19 +153,17 @@ class MainWindow(QMainWindow):
 
         self.thread_lightroom_automation.start()
 
-    def create_overlay(self, text="마우스 및 키보드를 절대 건들지 마세요 :)"):
+    def create_overlay(self):
         """✅ `overlay_running=True`이면 OverlayWindow 생성"""
         if self.overlay_window is None:
             self.overlay_window = OverlayWindow.create_overlay(
-                width=1200,
-                height=250,
-                bg_color="#ff0000",
-                opacity=0.3,
-                text=text,
+                width=400,
+                height=225,
+                bg_color="#f7dfdf",
+                opacity=1,
                 text_color="black",
-                font_size=48,
-                animation_speed=25,
-                y_offset=50,
+                font_size=20,
+                y_offset=24,
                 blur_radius=50,
             )
             self.overlay_window.show()
@@ -173,9 +189,7 @@ class MainWindow(QMainWindow):
         time.sleep(2)
 
         if self.overlay_mode == True:
-            self.create_overlay(
-                text="내보내기 셋팅중이에요, 마우스 및 키보드를 절대 건들지 마세요 :)"
-            )
+            self.create_overlay()
 
         self.state_manager.update_state(
             context="오버레이 실행 완료",
@@ -188,6 +202,18 @@ class MainWindow(QMainWindow):
         if finished == False:
             return
         # ✅ 메시지 박스 생성
+
+        # ✅ "확인" 버튼 클릭 후 메인 윈도우 숨기기
+        if self.overlay_window is not None:
+            self.delete_overlay()
+
+        self.state_manager.update_state(
+            context="자동화 끝! 오버레이 종료",
+            overlay_running=False,
+        )
+
+        self.show()
+
         msg_box = QMessageBox(
             self
         )  # ✅ 부모 윈도우 설정 (현재 윈도우가 닫혀도 메시지박스 유지)
@@ -229,15 +255,6 @@ class MainWindow(QMainWindow):
 
         # ✅ 메시지 박스를 띄우고 사용자가 버튼을 클릭할 때까지 대기
         msg_box.exec()
-
-        # ✅ "확인" 버튼 클릭 후 메인 윈도우 숨기기
-        if self.overlay_window is not None:
-            self.delete_overlay()
-
-        self.state_manager.update_state(
-            context="자동화 끝! 오버레이 종료",
-            overlay_running=False,
-        )
 
         self.cleanup_and_exit()
 
