@@ -68,7 +68,7 @@ def img_size_adjust(export_window: WindowSpecification):
     )
 
     resolution.set_text("")
-    resolution.set_text("360")
+    resolution.set_text("160")
 
     # 토글 대신
     export_opt_of_window.click_input()
