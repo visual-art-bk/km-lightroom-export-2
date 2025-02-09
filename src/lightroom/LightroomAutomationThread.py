@@ -10,6 +10,8 @@ from PySide6.QtCore import QThread, Signal
 class LightroomAutomationThread(QThread):
     """Lightroom 자동화 실행을 위한 스레드"""
 
+    failed_automation = Signal(bool)
+
     finished = Signal(bool)  # ✅ 성공/실패 여부를 전달하는 시그널
     is_run_lightroom = Signal(bool)
 
@@ -51,7 +53,7 @@ class LightroomAutomationThread(QThread):
 
         except Exception as e:
             print(f"❌ Lightroom 연결 실패: {e}")
-            self.finished.emit(False)  # ❌ 연결 실패 시그널 발생
+            self.failed_automation.emit(True)  # ❌ 연결 실패 시그널 발생
             return
 
         try:
@@ -64,4 +66,4 @@ class LightroomAutomationThread(QThread):
 
         except Exception as e:
             print(f"❌ Lightroom 자동화 실패: {e}")
-            self.finished.emit(False)  # ❌ 자동화 실패 시그널 발생
+            self.failed_automation.emit(True)  # ❌ 연결 실패 시그널 발생

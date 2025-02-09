@@ -64,9 +64,9 @@ def export_location(export_window: WindowSpecification, app_state):
     combobox.select(TEXT_DESKTOP)
 
     # 데스크탑에 저장하기
-    set_desktop_folder(
-        collapsible_selection=collapsible_selection, export_window=export_window
-    )
+    # set_desktop_folder(
+    #     collapsible_selection=collapsible_selection, export_window=export_window
+    # )
 
     checkbox_sub_folder = select_ui(
         control_type=CONTROL_TYPE_CHECKBOX,

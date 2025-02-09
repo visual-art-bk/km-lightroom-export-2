@@ -14,7 +14,10 @@ from PySide6.QtCore import Qt
 from state_manager import StateManager, AppState
 from lightroom import LightroomAutomationThread
 from ui.overlay.OverlayWindow import OverlayWindow
+from ui.msg_box.create_done_msg import create_done_msg
+from ui.msg_box.create_error_msg import create_error_msg
 from monitorings.LightroomMonitorThread import LightroomMonitorThread
+from lightroom.LightroomLaunchThread import LightroomLaunchThread
 
 
 class MainWindow(QMainWindow):
@@ -49,6 +52,8 @@ class MainWindow(QMainWindow):
         self.overlay_window = None
         self.lightroom_monitor = None
         self.thread_lightroom_automation = None
+        self.thread_lightroom_mornitor = None
+        self.thread_lightroom_launcher = None
 
     def init_window_layout(self):
         layout = QVBoxLayout()
@@ -111,10 +116,16 @@ class MainWindow(QMainWindow):
         }
 
     def init_threads(self):
+        self.thread_lightroom_launcher = LightroomLaunchThread()
+
         self.thread_lightroom_automation = LightroomAutomationThread(
             lock_user_input=self.lock_user_input
         )
         self.thread_lightroom_mornitor = LightroomMonitorThread()
+
+        self.thread_lightroom_launcher.lightroom_started.connect(
+            self.on_lightroom_launcher
+        )
 
         self.thread_lightroom_automation.is_run_lightroom.connect(
             self.on_lightroom_automation_is_run_lightroom
@@ -125,6 +136,68 @@ class MainWindow(QMainWindow):
         self.thread_lightroom_mornitor.lightroom_closed_mornitoring.connect(
             self.on_lightroom_closed_mornitoring
         )
+        self.thread_lightroom_automation.failed_automation.connect(
+            self.on_lightroom_automation_failed
+        )
+    
+    def on_lightroom_automation_failed(self, failed_automation):
+        if failed_automation == True:
+            self.delete_overlay()
+
+            self.state_manager.update_state(
+                context="자동화 에러생! 오버레이 종료",
+                overlay_running=False,
+            )
+
+            self.show()
+
+            error_msg_box = create_error_msg(parent=self)
+
+                        # ✅ 화면 정중앙에 메시지 박스를 배치
+            if self.isVisible():  # 메인 윈도우가 존재하면
+                parent_geometry = self.frameGeometry()
+                msg_box_geometry = error_msg_box.frameGeometry()
+                msg_box_geometry.moveCenter(
+                    parent_geometry.center()
+                )  # 메인 윈도우 중앙 좌표로 이동
+                error_msg_box.move(msg_box_geometry.topLeft())  # 최종 이동
+            else:  # 메인 윈도우가 보이지 않는다면, 화면 정중앙에 배치
+                screen_geometry = error_msg_box.screen().availableGeometry()
+                msg_box_geometry = error_msg_box.frameGeometry()
+                msg_box_geometry.moveCenter(screen_geometry.center())  # 전체 화면 중앙 좌표
+                error_msg_box.move(msg_box_geometry.topLeft())
+
+
+        error_msg_box.exec()
+
+
+       
+    def on_lightroom_launcher(self, lightroom_started):
+        print("lightroom_started: ", lightroom_started)
+
+        if lightroom_started == False:
+            self.state_manager.update_state(
+                context="라이트룸이 먼저 실행되지 않았음", lightroom_running=False
+            )
+            self.show_warning("⚠️ 경고: 라이트 룸을 먼저 실행하세요.")
+            return
+
+        time.sleep(2)
+
+        self.thread_lightroom_mornitor.start()
+
+        if self.overlay_mode == True:
+            self.create_overlay()
+
+        self.state_manager.update_state(
+            context="오버레이 실행 완료",
+            overlay_running=True,
+        )
+
+        self.thread_lightroom_automation.start()
+
+       
+    
 
     def run_main_window(self):
         userer_infos = self.get_user_infos()
@@ -151,7 +224,9 @@ class MainWindow(QMainWindow):
 
         self.init_threads()
 
-        self.thread_lightroom_automation.start()
+        self.thread_lightroom_launcher.start()
+
+        
 
     def create_overlay(self):
         """✅ `overlay_running=True`이면 OverlayWindow 생성"""
@@ -179,81 +254,37 @@ class MainWindow(QMainWindow):
         msg_box.exec()  # 메시지 박스 실행
 
     def on_lightroom_automation_is_run_lightroom(self, is_run_lightroom):
-        if is_run_lightroom == False:
-            self.state_manager.update_state(
-                context="라이트룸이 먼저 실행되지 않았음", lightroom_running=False
-            )
-            self.show_warning("⚠️ 경고: 라이트 룸을 먼저 실행하세요.")
-            return
-
-        time.sleep(2)
-
-        if self.overlay_mode == True:
-            self.create_overlay()
-
-        self.state_manager.update_state(
-            context="오버레이 실행 완료",
-            overlay_running=True,
-        )
-
-        self.thread_lightroom_mornitor.start()
-
+      pass
+    
     def on_lightroom_automation_finished(self, finished):
-        if finished == False:
-            return
-        # ✅ 메시지 박스 생성
-
-        # ✅ "확인" 버튼 클릭 후 메인 윈도우 숨기기
-        if self.overlay_window is not None:
+        if self.overlay_window is not None and finished == True:
             self.delete_overlay()
 
-        self.state_manager.update_state(
-            context="자동화 끝! 오버레이 종료",
-            overlay_running=False,
-        )
+            self.state_manager.update_state(
+                context="자동화 끝! 오버레이 종료",
+                overlay_running=False,
+            )
 
-        self.show()
+            self.show()
 
-        msg_box = QMessageBox(
-            self
-        )  # ✅ 부모 윈도우 설정 (현재 윈도우가 닫혀도 메시지박스 유지)
-        msg_box.setIcon(QMessageBox.Icon.Information)  # ℹ️ 정보 아이콘 설정
-        msg_box.setWindowTitle("알림")  # 창 제목
-        msg_box.setText(
-            "📸 내보내기가 시작됐어요!\n\n"
-            "⏳ 약 10분 정도 소요됩니다.\n\n"
-            "✅ '확인' 버튼을 눌러주시고,\n"
-            "🎨 촬영 소품, 배경지, 리모컨을 정리한 후\n"
-            "🚶‍♂️ 셀렉실로 이동해주세요."
-        )  # 메시지 내용
+            msg_box = create_done_msg(parent=self)
+           
 
-        msg_box.setStandardButtons(QMessageBox.StandardButton.Ok)  # "확인" 버튼 추가
+            # ✅ 화면 정중앙에 메시지 박스를 배치
+            if self.isVisible():  # 메인 윈도우가 존재하면
+                parent_geometry = self.frameGeometry()
+                msg_box_geometry = msg_box.frameGeometry()
+                msg_box_geometry.moveCenter(
+                    parent_geometry.center()
+                )  # 메인 윈도우 중앙 좌표로 이동
+                msg_box.move(msg_box_geometry.topLeft())  # 최종 이동
+            else:  # 메인 윈도우가 보이지 않는다면, 화면 정중앙에 배치
+                screen_geometry = msg_box.screen().availableGeometry()
+                msg_box_geometry = msg_box.frameGeometry()
+                msg_box_geometry.moveCenter(screen_geometry.center())  # 전체 화면 중앙 좌표
+                msg_box.move(msg_box_geometry.topLeft())
 
-        # ✅ 메시지 박스를 항상 최상위 창으로 설정
-        msg_box.setWindowFlags(
-            Qt.WindowType.Dialog | Qt.WindowType.WindowStaysOnTopHint
-        )
 
-        # ✅ 메시지 박스를 먼저 띄운 후 크기 확정
-        msg_box.adjustSize()  # 크기를 자동으로 조정
-        msg_box.show()  # 크기를 확정하기 위해 먼저 표시
-        msg_box.repaint()  # UI 갱신 (위치 보정)
-
-        # ✅ 화면 정중앙에 메시지 박스를 배치
-        if self.isVisible():  # 메인 윈도우가 존재하면
-            parent_geometry = self.frameGeometry()
-            msg_box_geometry = msg_box.frameGeometry()
-            msg_box_geometry.moveCenter(
-                parent_geometry.center()
-            )  # 메인 윈도우 중앙 좌표로 이동
-            msg_box.move(msg_box_geometry.topLeft())  # 최종 이동
-        else:  # 메인 윈도우가 보이지 않는다면, 화면 정중앙에 배치
-            screen_geometry = msg_box.screen().availableGeometry()
-            msg_box_geometry = msg_box.frameGeometry()
-            msg_box_geometry.moveCenter(screen_geometry.center())  # 전체 화면 중앙 좌표
-            msg_box.move(msg_box_geometry.topLeft())
-
-        # ✅ 메시지 박스를 띄우고 사용자가 버튼을 클릭할 때까지 대기
         msg_box.exec()
 
         self.cleanup_and_exit()
