@@ -40,7 +40,7 @@ class MainWindow(QMainWindow):
 
         self.init_state_manager()
 
-        self.setWindowTitle("다비 내보내기 V.2.0")
+        self.setWindowTitle("다비 내보내기 베타 V.1.0")
 
         self.init_window_position(
             height=height,
