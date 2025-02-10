@@ -225,3 +225,142 @@ NameError: name 're' is not defined. Did you forget to import 're'?
 
 ============================================================
 
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 14:15:55
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\git\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\git\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 53, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 87, in export_location
+    export_opt_of_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\git\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\git\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\git\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\git\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\git\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '\\d+개(?:의)? 파일 내보내기', 'control_type': 'Window', 'top_level_only': False, 'enabled_only': False, 'visible_only': False, 'parent': <uia_element_info.UIAElementInfo - 'Lightroom Catalog - Adobe Photoshop Lightroom Classic - 라이브러리', AgWinMainFrame, 857552>, 'backend': 'uia'}
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 14:20:01
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 54, in run
+    self.force_minimize_window()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+TypeError: LightroomAutomationThread.force_minimize_window() missing 1 required positional argument: 'lightroom_window'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 14:29:24
+============================================================
+Lightroom 창을 찾을 수 없습니다.
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 14:29:58
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 57, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 55, in export_location
+    export_opt_of_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'click_input'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 14:31:34
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 57, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 55, in export_location
+    export_opt_of_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'click_input'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 14:32:08
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 57, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 55, in export_location
+    export_opt_of_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'click_input'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 14:36:26
+============================================================
+Lightroom 창을 찾을 수 없습니다.
+
+============================================================
+

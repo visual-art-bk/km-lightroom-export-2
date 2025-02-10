@@ -216,6 +216,8 @@ class MainWindow(QMainWindow):
 
             msg_box.exec()
 
+            self.thread_lightroom_launcher.minimize_lightroom_window()
+
             self.cleanup_and_exit()
 
     def on_lightroom_closed_mornitoring(self):

@@ -97,3 +97,37 @@ class LightroomLaunchThread(QThread):
             print(f"⚠️ Lightroom 창 최대화 실패: {e}")
             log_exception_to_file(exception_obj=e, message='Lightroom 창 최대화 실패')
             self.lightroom_started.emit(False)
+
+
+    def minimize_lightroom_window(self):
+        """Lightroom 창을 정확하게 찾아서 최소화"""
+        try:
+            time.sleep(2)  # ✅ Lightroom 창이 완전히 로드될 때까지 대기
+
+            # ✅ 모든 창 제목 가져오기
+            all_windows = gw.getAllTitles()
+            print(f"🔍 현재 실행 중인 창 목록: {all_windows}")
+
+            # ✅ Lightroom 창 제목을 정규표현식으로 탐지
+            pattern = r"Lightroom Catalog - Adobe (Photoshop )?Lightroom Classic - .*"
+            lightroom_window = None
+
+            for window_title in all_windows:
+                if re.match(pattern, window_title):
+                    lightroom_window = gw.getWindowsWithTitle(window_title)[0]
+                    break
+
+            if lightroom_window:
+                if not lightroom_window.isMinimized:
+                    print("🖥 Lightroom 창을 최소화합니다.")
+                    lightroom_window.minimize()
+                else:
+                    print("🔄 Lightroom 창이 이미 최소화 상태입니다.")
+            else:
+                print("⚠️ Lightroom 창을 찾을 수 없습니다.")
+                log_exception_to_file(message='Lightroom 창을 찾을 수 없습니다.')
+
+        except Exception as e:
+            print(f"⚠️ Lightroom 창 최소화 실패: {e}")
+            log_exception_to_file(exception_obj=e, message='Lightroom 창 최소화 실패')
+            self.lightroom_started.emit(False)
