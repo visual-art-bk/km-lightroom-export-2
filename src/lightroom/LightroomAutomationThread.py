@@ -1,7 +1,6 @@
 import time
 import psutil
-from pywinauto import Application, keyboard
-from state_manager.StateManager import StateManager
+from pywinauto import Application
 from .utils.get_lightroom_win import get_lightroom_win
 from lightroom.exports.run_exports import run_exports
 from PySide6.QtCore import QThread, Signal
@@ -20,8 +19,6 @@ class LightroomAutomationThread(QThread):
 
     def run(self):
         """Lightroom 자동화를 실행하는 메인 스레드"""
-        state_manager = StateManager()
-        state = state_manager.get_state()
 
         # ✅ 1️⃣ Lightroom 실행 여부 확인
         lightroom_pid = None
