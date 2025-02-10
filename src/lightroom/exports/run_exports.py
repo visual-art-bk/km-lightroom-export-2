@@ -37,11 +37,12 @@ def unlock_input():
     ctypes.windll.user32.BlockInput(False)  # 🔓 입력 해제
 
 
-def run_exports(lightroom: WindowSpecification, lock_user_input=True):
+def run_exports(lightroom: WindowSpecification, lock_user_input):
     state_manager = StateManager()
     app_state = state_manager.get_state()
 
-    lock_input()
+    if lock_user_input == True:
+        lock_input()
 
     # 전체 사진 단축키로 선택
     send_shortcuts(
@@ -99,4 +100,6 @@ def run_exports(lightroom: WindowSpecification, lock_user_input=True):
         print('고유한 이름 사용 - 창이 존재하지 않으므로 클릭하지 않습니다.')
 
 
-    unlock_input()
+    if lock_user_input == True:
+        lock_input()
+
