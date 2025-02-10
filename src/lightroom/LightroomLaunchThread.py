@@ -3,6 +3,7 @@ import time
 import psutil
 import pygetwindow as gw  # ✅ 창을 제어하기 위한 라이브러리
 from PySide6.QtCore import QThread, Signal
+from helpers import log_exception_to_file
 
 class LightroomLaunchThread(QThread):
     """Lightroom 실행을 담당하는 스레드"""
@@ -50,6 +51,7 @@ class LightroomLaunchThread(QThread):
 
         except Exception as e:
             print(f"❌ Lightroom 실행 실패: {e}")
+            log_exception_to_file(exception_obj=e, message='Lightroom 실행 실패')
             self.lightroom_started.emit(False)
 
     def is_lightroom_running(self):
@@ -74,6 +76,7 @@ class LightroomLaunchThread(QThread):
                     return
         except Exception as e:
             print(f"⚠️ Lightroom 창 최대화 실패: {e}")
+            log_exception_to_file(exception_obj=e, message='Lightroom 창 최대화 실패')
             self.lightroom_started.emit(False)
 
     def minimize_lightroom_window(self):
@@ -86,4 +89,5 @@ class LightroomLaunchThread(QThread):
                     return
         except Exception as e:
             print(f"⚠️ Lightroom 창 최소화 실패: {e}")
+            log_exception_to_file(exception_obj=e, message='Lightroom 창 최소화 실패')
             self.lightroom_started.emit(False)

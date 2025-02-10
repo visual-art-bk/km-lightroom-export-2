@@ -4,7 +4,7 @@ from pywinauto import Application
 from .utils.get_lightroom_win import get_lightroom_win
 from lightroom.exports.run_exports import run_exports
 from PySide6.QtCore import QThread, Signal
-
+from helpers import log_exception_to_file
 
 class LightroomAutomationThread(QThread):
     """Lightroom 자동화 실행을 위한 스레드"""
@@ -47,6 +47,7 @@ class LightroomAutomationThread(QThread):
 
         except Exception as e:
             print(f"❌ Lightroom 연결 실패: {e}")
+            log_exception_to_file(exception_obj=e, message='Lightroom 연결 실패')
             self.failed_automation.emit(True)  # ❌ 연결 실패 시그널 발생
             return
 
@@ -60,4 +61,5 @@ class LightroomAutomationThread(QThread):
 
         except Exception as e:
             print(f"❌ Lightroom 자동화 실패: {e}")
+            log_exception_to_file(exception_obj=e, message='Lightroom 자동화 실패')
             self.failed_automation.emit(True)  # ❌ 연결 실패 시그널 발생

@@ -16,7 +16,7 @@ from ui.overlay.OverlayWindow import OverlayWindow
 from ui.msg_box import create_error_msg, create_done_msg
 from monitorings.LightroomMonitorThread import LightroomMonitorThread
 from lightroom.LightroomLaunchThread import LightroomLaunchThread
-
+from helpers.log_exception_to_file import log_exception_to_file
 
 class MainWindow(QMainWindow):
     def __init__(
@@ -155,8 +155,9 @@ class MainWindow(QMainWindow):
 
             self.thread_lightroom_launcher.start()
 
-        except:
+        except Exception as e:
             self.show_err_msg()
+            log_exception_to_file(exception_obj=e, message='메인 프로그램 실행 중 예외발생')
 
     def on_lightroom_automation_failed(self, failed_automation):
         if failed_automation == False:
