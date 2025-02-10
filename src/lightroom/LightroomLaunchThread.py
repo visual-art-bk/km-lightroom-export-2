@@ -74,3 +74,14 @@ class LightroomLaunchThread(QThread):
                     return
         except Exception as e:
             print(f"⚠️ Lightroom 창 최대화 실패: {e}")
+
+    def minimize_lightroom_window(self):
+        """이미 실행 중인 Lightroom 창을 최소화"""
+        try:
+            for window in gw.getWindowsWithTitle("Lightroom"):
+                if window and not window.isMinimized:
+                    print("🖥 Lightroom 창을 최소화합니다.")
+                    window.minimize()
+                    return
+        except Exception as e:
+            print(f"⚠️ Lightroom 창 최소화 실패: {e}")

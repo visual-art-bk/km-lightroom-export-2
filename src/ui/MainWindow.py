@@ -77,7 +77,7 @@ class MainWindow(QMainWindow):
 
     def init_state_manager(self):
         self.state_manager = StateManager()
-        self.state_manager.subscribe(self.ON_STATE_CHANGE)  # 상태 변경 구독
+        self.state_manager.subscribe(self.on_state_global_change)  # 상태 변경 구독
 
     def init_window_position(self, width, height):
         """✅ 창을 화면 정중앙 (상하 & 좌우) 정렬"""
@@ -117,10 +117,6 @@ class MainWindow(QMainWindow):
 
         self.thread_lightroom_launcher.lightroom_started.connect(
             self.on_lightroom_launcher
-        )
-
-        self.thread_lightroom_automation.is_run_lightroom.connect(
-            self.on_lightroom_automation_is_run_lightroom
         )
         self.thread_lightroom_automation.finished.connect(
             self.on_lightroom_automation_finished
@@ -176,16 +172,12 @@ class MainWindow(QMainWindow):
         error_msg_box.exec()
 
     def on_lightroom_launcher(self, lightroom_started):
-        print("lightroom_started: ", lightroom_started)
-
         if lightroom_started == False:
             self.state_manager.update_state(
                 context="라이트룸이 먼저 실행되지 않았음", lightroom_running=False
             )
             self.show_warning("⚠️ 경고: 라이트 룸을 먼저 실행하세요.")
             return
-
-        time.sleep(2)
 
         self.thread_lightroom_mornitor.start()
 
@@ -199,37 +191,11 @@ class MainWindow(QMainWindow):
 
         self.thread_lightroom_automation.start()
 
-    def create_overlay(self):
-        """✅ `overlay_running=True`이면 OverlayWindow 생성"""
-        if self.overlay_window is None:
-            self.overlay_window = OverlayWindow.create_overlay(
-                width=400,
-                height=225,
-                bg_color="#f7dfdf",
-                opacity=1,
-                text_color="black",
-                font_size=20,
-                y_offset=24,
-                blur_radius=50,
-            )
-            self.overlay_window.show()
-        else:
-            print("해당없음")
-
-    def show_warning(self, text="⚠️ 경고: 잘못된 작업입니다."):
-        msg_box = QMessageBox(self)
-        msg_box.setIcon(QMessageBox.Icon.Information)  # ⚠️ 경고 아이콘
-        msg_box.setWindowTitle("경고")  # 창 제목
-        msg_box.setText(text)  # 메시지 내용
-        msg_box.setStandardButtons(QMessageBox.Ok)  # 확인 버튼 추가
-        msg_box.exec()  # 메시지 박스 실행
-
-    def on_lightroom_automation_is_run_lightroom(self, is_run_lightroom):
-        pass
-
     def on_lightroom_automation_finished(self, finished):
         if self.overlay_window is not None and finished == True:
             self.delete_overlay()
+
+            self.thread_lightroom_launcher.minimize_lightroom_window()
 
             self.state_manager.update_state(
                 context="자동화 끝! 오버레이 종료",
@@ -256,7 +222,7 @@ class MainWindow(QMainWindow):
 
         QApplication.quit()  # ✅ `QApplication` 종료 (완전히 종료)
 
-    def ON_STATE_CHANGE(self, new_state: AppState):
+    def on_state_global_change(self, new_state: AppState):
         """전역 상태 변경 감지 및 UI 반영"""
         print(
             f"----------------- [📢] 상태 변경 감지: {new_state.context} -----------------"
@@ -308,3 +274,28 @@ class MainWindow(QMainWindow):
         # ✅ 6. **운영체제 프로세스 강제 종료 (최후의 수단)**
         print("🚀 모든 리소스 해제 완료 → 시스템 프로세스 강제 종료")
         os._exit(0)  # 💀 시스템 차원에서 프로세스 완전 제거
+
+    def create_overlay(self):
+        if self.overlay_window is not None:
+            print("이미 오버레이가 생성중입니다.")
+            return
+
+        self.overlay_window = OverlayWindow.create_overlay(
+            width=400,
+            height=225,
+            bg_color="#f7dfdf",
+            opacity=1,
+            text_color="black",
+            font_size=20,
+            y_offset=24,
+            blur_radius=50,
+        )
+        self.overlay_window.show()
+
+    def show_warning(self, text="⚠️ 경고: 잘못된 작업입니다."):
+        msg_box = QMessageBox(self)
+        msg_box.setIcon(QMessageBox.Icon.Information)  # ⚠️ 경고 아이콘
+        msg_box.setWindowTitle("경고")  # 창 제목
+        msg_box.setText(text)  # 메시지 내용
+        msg_box.setStandardButtons(QMessageBox.Ok)  # 확인 버튼 추가
+        msg_box.exec()  # 메시지 박스 실행

@@ -13,7 +13,6 @@ class LightroomAutomationThread(QThread):
     failed_automation = Signal(bool)
 
     finished = Signal(bool)  # ✅ 성공/실패 여부를 전달하는 시그널
-    is_run_lightroom = Signal(bool)
 
     def __init__(self, lock_user_input):
         super().__init__()
@@ -33,11 +32,9 @@ class LightroomAutomationThread(QThread):
 
         if not lightroom_pid:
             print("❌ Lightroom이 실행 중이 아닙니다. 먼저 실행해주세요.")
-            self.is_run_lightroom.emit(False)
             return
 
         print(f"✅ Lightroom 실행 감지됨 (PID: {lightroom_pid})")
-        self.is_run_lightroom.emit(True)
 
         # ✅ 2️⃣ Lightroom 프로세스에 직접 연결
         try:
