@@ -97,11 +97,6 @@ class MainWindow(QMainWindow):
         # ✅ 창을 항상 최상단에 고정
         self.setWindowFlags(Qt.WindowStaysOnTopHint)
 
-    def get_screen_width(self):
-        # 현재 화면 크기 가져오기
-        screen = QApplication.primaryScreen().availableGeometry()
-        return screen.width()  # 화면 전체 너비
-
     def delete_overlay(self):
         self.overlay_window = None
         OverlayWindow._instance = None
