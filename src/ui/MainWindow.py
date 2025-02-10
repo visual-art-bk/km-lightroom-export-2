@@ -176,7 +176,7 @@ class MainWindow(QMainWindow):
             self.state_manager.update_state(
                 context="라이트룸이 먼저 실행되지 않았음", lightroom_running=False
             )
-            self.show_warning("⚠️ 경고: 라이트 룸을 먼저 실행하세요.")
+            self.show_warning("⚠️ 라이트 룸을 다시 실행해주세요.")
             return
 
         self.thread_lightroom_mornitor.start()
