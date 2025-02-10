@@ -176,28 +176,22 @@ class MainWindow(QMainWindow):
         self.show_err_msg()
 
     def on_lightroom_launcher(self, lightroom_started):
-        if lightroom_started == False:
+        if lightroom_started == True:
+            print("라이트룸 활성화 완료")
+
+            print("라이트룸 모니터링 시작")
+            self.thread_lightroom_mornitor.start()
+
+            print("라이트룸 자동화 시작")
+            self.thread_lightroom_automation.start()
+
+            if self.overlay_mode == True:
+                self.create_overlay()
+
             self.state_manager.update_state(
-                context="라이트룸이 먼저 실행되지 않았음", lightroom_running=False
+                context="오버레이 실행 완료",
+                overlay_running=True,
             )
-            self.show_warning("⚠️ 라이트 룸을 다시 실행해주세요.")
-            return
-
-        print("라이트룸 활성화 완료")
-
-        print("라이트룸 모니터링 시작")
-        self.thread_lightroom_mornitor.start()
-
-        print("라이트룸 자동화 시작")
-        self.thread_lightroom_automation.start()
-
-        if self.overlay_mode == True:
-            self.create_overlay()
-
-        self.state_manager.update_state(
-            context="오버레이 실행 완료",
-            overlay_running=True,
-        )
 
     def on_lightroom_automation_finished(self, finished):
         if self.overlay_window is not None and finished == True:

@@ -364,3 +364,200 @@ Lightroom 창을 찾을 수 없습니다.
 
 ============================================================
 
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 17:15:49
+============================================================
+Lightroom 실행 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\LightroomLaunchThread.py", line 22, in run
+    startupinfo.wShowWindow = subprocess.SW_SHOWMAXIMIZED  # ✅ 실행 시 창을 최대화
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'subprocess' has no attribute 'SW_SHOWMAXIMIZED'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 17:17:06
+============================================================
+Lightroom 실행 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\LightroomLaunchThread.py", line 22, in run
+    startupinfo.wShowWindow = subprocess.SW_SHOWMAXIMIZED  # ✅ 실행 시 창을 최대화
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'subprocess' has no attribute 'SW_SHOWMAXIMIZED'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 17:17:58
+============================================================
+Lightroom 실행 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\LightroomLaunchThread.py", line 22, in run
+    startupinfo.wShowWindow = subprocess.SW_SHOWMAXIMIZED  # ✅ 실행 시 창을 최대화
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'subprocess' has no attribute 'SW_SHOWMAXIMIZED'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 17:18:55
+============================================================
+Lightroom 실행 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\LightroomLaunchThread.py", line 22, in run
+    startupinfo.wShowWindow = subprocess.SW_SHOWMAXIMIZED  # ✅ 실행 시 창을 최대화
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'subprocess' has no attribute 'SW_SHOWMAXIMIZED'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 17:21:40
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 57, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 45, in export_location
+    ) = check_export_option(win_specs=export_window, export_opt_title="내보내기 위치")
+        ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\utils\check_export_option.py", line 7, in check_export_option
+    collapsible_selection = win_specs.child_window(
+                            ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'child_window'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 17:23:51
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 57, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 45, in export_location
+    ) = check_export_option(win_specs=export_window, export_opt_title="내보내기 위치")
+        ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\utils\check_export_option.py", line 7, in check_export_option
+    collapsible_selection = win_specs.child_window(
+                            ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'child_window'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 17:26:57
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\git\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\git\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 53, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 73, in run_exports
+    specs_filename(export_window=export_window)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\specs_filename\specs_filename.py", line 37, in specs_filename
+    toggle_state = check_toggle(win_specs=checkbox)
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\utils\check_toggle.py", line 5, in check_toggle
+    state = win_specs.wrapper_object().get_toggle_state()
+            ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\git\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\git\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\git\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\git\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\git\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '\\d+개(?:의)? 파일 내보내기', 'control_type': 'Window', 'top_level_only': False, 'enabled_only': False, 'visible_only': False, 'parent': <uia_element_info.UIAElementInfo - 'Lightroom Catalog - Adobe Photoshop Lightroom Classic - 라이브러리', AgWinMainFrame, 1579340>, 'backend': 'uia'}
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 17:38:05
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 53, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 55, in export_location
+    export_opt_of_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'click_input'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-10 17:41:41
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 53, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\git\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 55, in export_location
+    export_opt_of_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'click_input'
+
+============================================================
+

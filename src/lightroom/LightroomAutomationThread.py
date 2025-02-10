@@ -40,11 +40,7 @@ class LightroomAutomationThread(QThread):
 
             # ✅ 3️⃣ Lightroom 창 활성화 확인 및 복구
             lightroom = get_lightroom_win(app)
-            if lightroom.is_minimized():
-                print("🔄 Lightroom 창이 최소화 상태, 복구 중...")
-                lightroom.restore()  # 창 복구
-                time.sleep(3)  # 복구 대기
-
+            
         except Exception as e:
             print(f"❌ Lightroom 연결 실패: {e}")
             log_exception_to_file(exception_obj=e, message='Lightroom 연결 실패')
