@@ -129,31 +129,35 @@ class MainWindow(QMainWindow):
         )
 
     def run_main_window(self):
-        userer_infos = self.get_user_infos()
-        username = userer_infos["username"]
-        phone_number = userer_infos["phone_number"]
+        try:
+            userer_infos = self.get_user_infos()
+            username = userer_infos["username"]
+            phone_number = userer_infos["phone_number"]
 
-        if username == "":
-            QMessageBox.warning(self, "입력 오류", "사용자 이름을 입력하세요!")
-            return
+            if username == "":
+                QMessageBox.warning(self, "입력 오류", "사용자 이름을 입력하세요!")
+                return
 
-        if phone_number == "":
-            QMessageBox.warning(
-                self, "입력 오류", "전화번호 뒷자리 4자리를 입력하세요!"
+            if phone_number == "":
+                QMessageBox.warning(
+                    self, "입력 오류", "전화번호 뒷자리 4자리를 입력하세요!"
+                )
+                return
+
+            self.hide()
+
+            self.state_manager.update_state(
+                phone_number=phone_number,
+                username=username,
+                context="사용자정보 올바르게 입력함",
             )
-            return
 
-        self.hide()
+            self.init_threads()
 
-        self.state_manager.update_state(
-            phone_number=phone_number,
-            username=username,
-            context="사용자정보 올바르게 입력함",
-        )
+            self.thread_lightroom_launcher.start()
 
-        self.init_threads()
-
-        self.thread_lightroom_launcher.start()
+        except:
+            self.show_err_msg()
 
     def on_lightroom_automation_failed(self, failed_automation):
         if failed_automation == False:
@@ -166,10 +170,7 @@ class MainWindow(QMainWindow):
         )
 
         self.show()
-
-        error_msg_box = create_error_msg(parent=self)
-
-        error_msg_box.exec()
+        self.show_err_msg()
 
     def on_lightroom_launcher(self, lightroom_started):
         if lightroom_started == False:
@@ -206,9 +207,9 @@ class MainWindow(QMainWindow):
 
             msg_box = create_done_msg(parent=self)
 
-        msg_box.exec()
+            msg_box.exec()
 
-        self.cleanup_and_exit()
+            self.cleanup_and_exit()
 
     def on_lightroom_closed_mornitoring(self):
         print("✅ Lightroom 종료 감지 → 프로그램 종료")
@@ -219,8 +220,6 @@ class MainWindow(QMainWindow):
         )
 
         self.cleanup_and_exit()
-
-        QApplication.quit()  # ✅ `QApplication` 종료 (완전히 종료)
 
     def on_state_global_change(self, new_state: AppState):
         """전역 상태 변경 감지 및 UI 반영"""
@@ -299,3 +298,7 @@ class MainWindow(QMainWindow):
         msg_box.setText(text)  # 메시지 내용
         msg_box.setStandardButtons(QMessageBox.Ok)  # 확인 버튼 추가
         msg_box.exec()  # 메시지 박스 실행
+
+    def show_err_msg(self):
+        error_msg_box = create_error_msg(parent=self)
+        error_msg_box.exec()
