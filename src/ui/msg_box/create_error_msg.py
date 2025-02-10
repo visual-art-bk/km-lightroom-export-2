@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QMessageBox
-
 from PySide6.QtCore import Qt
+from .move_msg_center import move_msg_center
 
 
 def create_error_msg(parent):
@@ -20,5 +20,7 @@ def create_error_msg(parent):
     msg_box.adjustSize()  # 크기를 자동으로 조정
     msg_box.show()  # 크기를 확정하기 위해 먼저 표시
     msg_box.repaint()  # UI 갱신 (위치 보정)
+
+    move_msg_center(parent=parent, msg_box=msg_box)
 
     return msg_box
