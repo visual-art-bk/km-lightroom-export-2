@@ -1,7 +1,6 @@
-from PySide6.QtWidgets import QWidget, QLabel
+from PySide6.QtWidgets import QWidget
 from PySide6.QtCore import Qt
 from ui.overlay.TextContainerWidget import TextContainerWidget
-from ui.utils.hex_to_rgb import hex_to_rgb
 from ui.overlay.text_contents import text_contents
 from ui.utils.apply_bg_wideg_style import apply_bg_wideg_style
 

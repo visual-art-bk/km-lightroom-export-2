@@ -1,4 +1,4 @@
-from PySide6.QtWidgets import QWidget, QLabel, QVBoxLayout, QGraphicsBlurEffect
+from PySide6.QtWidgets import QWidget, QLabel
 from PySide6.QtCore import Qt, QTimer
 
 

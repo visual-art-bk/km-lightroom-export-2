@@ -1,5 +1,4 @@
 import os
-import time
 from PySide6.QtWidgets import (
     QMainWindow,
     QLabel,
