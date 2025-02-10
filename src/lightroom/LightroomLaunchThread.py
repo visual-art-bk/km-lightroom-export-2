@@ -1,3 +1,4 @@
+import re
 import subprocess
 import time
 import psutil
@@ -11,8 +12,7 @@ class LightroomLaunchThread(QThread):
     lightroom_started = Signal(bool)  # ✅ Lightroom 실행 완료 여부 신호
 
     def run(self):
-        """Lightroom 실행 (이미 실행 중이면 최대화, 아니면 실행 후 최대화)"""
-        print("🚀 Lightroom 실행 중...")
+        print("🚀 Lightroom 실행 준비...")
 
         try:
             # ✅ 이미 실행 중인지 확인
@@ -23,6 +23,8 @@ class LightroomLaunchThread(QThread):
                 self.lightroom_started.emit(True)
                 return
             
+            print("🚀 Lightroom 실행 시작...")
+
             # ✅ 부모 프로세스와 완전히 독립적으로 실행되도록 설정
             startupinfo = subprocess.STARTUPINFO()
             startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
@@ -58,36 +60,40 @@ class LightroomLaunchThread(QThread):
         """Lightroom이 실행 중인지 확인"""
 
         for process in psutil.process_iter(attrs=["name"]):
-            print(process)
-            print( process.info["name"] )
-            
             if "Lightroom.exe" in process.info["name"]:
                 return True
         return False
 
     def maximize_lightroom_window(self):
-        """이미 실행 중인 Lightroom 창을 최대화"""
+        """Lightroom 창을 정확하게 찾아서 최대화"""
         try:
-            for window in gw.getWindowsWithTitle("Lightroom"):
-                if window and not window.isMaximized:
+            time.sleep(2)  # ✅ Lightroom 창이 완전히 로드될 때까지 대기
 
-                    print("🖥 Lightroom 창을 최대화합니다.")
-                    window.maximize()
-                    return
+            # ✅ 모든 창 제목 가져오기
+            all_windows = gw.getAllTitles()
+            print(f"🔍 현재 실행 중인 창 목록: {all_windows}")
+
+            # ✅ Lightroom 창 제목을 정규표현식으로 탐지
+            pattern = r"Lightroom Catalog - Adobe (Photoshop )?Lightroom Classic - .*"
+            lightroom_window = None
+
+            for window_title in all_windows:
+                if re.match(pattern, window_title):
+                    lightroom_window = gw.getWindowsWithTitle(window_title)[0]
+                    break
+
+            if lightroom_window:
+                if lightroom_window.isMinimized:
+                    print("🔄 Lightroom 창이 최소화 상태, 복구 중...")
+                    lightroom_window.restore()  # 창 복구
+                
+                print("🖥 Lightroom 창을 최대화합니다.")
+                lightroom_window.maximize()
+            else:
+                print("⚠️ Lightroom 창을 찾을 수 없습니다.")
+                log_exception_to_file(message='Lightroom 창을 찾을 수 없습니다.')
+
         except Exception as e:
             print(f"⚠️ Lightroom 창 최대화 실패: {e}")
             log_exception_to_file(exception_obj=e, message='Lightroom 창 최대화 실패')
-            self.lightroom_started.emit(False)
-
-    def minimize_lightroom_window(self):
-        """이미 실행 중인 Lightroom 창을 최소화"""
-        try:
-            for window in gw.getWindowsWithTitle("Lightroom"):
-                if window and not window.isMinimized:
-                    print("🖥 Lightroom 창을 최소화합니다.")
-                    window.minimize()
-                    return
-        except Exception as e:
-            print(f"⚠️ Lightroom 창 최소화 실패: {e}")
-            log_exception_to_file(exception_obj=e, message='Lightroom 창 최소화 실패')
             self.lightroom_started.emit(False)

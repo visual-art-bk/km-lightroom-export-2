@@ -18,6 +18,7 @@ from monitorings.LightroomMonitorThread import LightroomMonitorThread
 from lightroom.LightroomLaunchThread import LightroomLaunchThread
 from helpers.log_exception_to_file import log_exception_to_file
 
+
 class MainWindow(QMainWindow):
     def __init__(
         self,
@@ -128,6 +129,8 @@ class MainWindow(QMainWindow):
         )
 
     def run_main_window(self):
+        self.init_threads()
+
         try:
             userer_infos = self.get_user_infos()
             username = userer_infos["username"]
@@ -151,13 +154,13 @@ class MainWindow(QMainWindow):
                 context="사용자정보 올바르게 입력함",
             )
 
-            self.init_threads()
-
             self.thread_lightroom_launcher.start()
 
         except Exception as e:
             self.show_err_msg()
-            log_exception_to_file(exception_obj=e, message='메인 프로그램 실행 중 예외발생')
+            log_exception_to_file(
+                exception_obj=e, message="메인 프로그램 실행 중 예외발생"
+            )
 
     def on_lightroom_automation_failed(self, failed_automation):
         if failed_automation == False:
@@ -180,7 +183,13 @@ class MainWindow(QMainWindow):
             self.show_warning("⚠️ 라이트 룸을 다시 실행해주세요.")
             return
 
+        print("라이트룸 활성화 완료")
+
+        print("라이트룸 모니터링 시작")
         self.thread_lightroom_mornitor.start()
+
+        print("라이트룸 자동화 시작")
+        self.thread_lightroom_automation.start()
 
         if self.overlay_mode == True:
             self.create_overlay()
@@ -189,8 +198,6 @@ class MainWindow(QMainWindow):
             context="오버레이 실행 완료",
             overlay_running=True,
         )
-
-        self.thread_lightroom_automation.start()
 
     def on_lightroom_automation_finished(self, finished):
         if self.overlay_window is not None and finished == True:
