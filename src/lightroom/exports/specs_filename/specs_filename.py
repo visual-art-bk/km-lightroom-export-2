@@ -1,26 +1,16 @@
-from pywinauto import  WindowSpecification
+from pywinauto import WindowSpecification
 from lightroom.utils.select_ui import select_ui
-from lightroom.utils.check_export_option import check_export_option
+from lightroom.utils.check_main_menu import check_main_menu
 from lightroom.utils.check_toggle import check_toggle
+
+MAIN_TITLE = "파일 이름 지정"
 
 
 def specs_filename(export_window: WindowSpecification):
-    
-    (
-        collapsible_selection,
-        export_opt_of_col,
-    ) = check_export_option(win_specs=export_window, export_opt_title="파일 이름 지정")
-    
-    export_opt_of_window = select_ui(
-            win_specs=export_window,
-            control_type="Pane",
-            title="파일 이름 지정",
-            found_index=0,
-        )
-    
-    if export_opt_of_col == None:
-        export_opt_of_window.click_input()
-      
+    win_specs = check_main_menu(export_window=export_window, main_title=MAIN_TITLE)
+
+    collapsible_selection = win_specs["col"]
+    export_opt_of_window = win_specs["main_menu"]
 
     collapsible_selection = select_ui(
         found_index=0,
@@ -50,7 +40,6 @@ def specs_filename(export_window: WindowSpecification):
         found_index=0,
     )
 
-    edit_field.set_text("")
     edit_field.set_text("필터")
 
     export_opt_of_window.click_input()

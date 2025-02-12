@@ -90,16 +90,16 @@ def run_exports(lightroom: WindowSpecification, lock_user_input):
 
     export_button.click_input()
 
-    try:
-        use_identified_name_save = lightroom.child_window(
-        title="고유한 이름 사용", control_type="Button", found_index=0
+    use_identified_name_save = select_ui(
+        win_specs=lightroom,
+        title="고유한 이름 사용",
+        control_type="Button",
+        found_index=0,
     )
+
+    is_identi_name_active = use_identified_name_save.exists()
+    if is_identi_name_active == True:
         use_identified_name_save.click()
-
-    except:
-        print('고유한 이름 사용 - 창이 존재하지 않으므로 클릭하지 않습니다.')
-
 
     if lock_user_input == True:
         lock_input()
-

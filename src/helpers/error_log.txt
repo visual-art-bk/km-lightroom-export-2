@@ -1373,3 +1373,2660 @@ IndexError: item '특정 폴더' not found or can't be accessed
 
 ============================================================
 
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 09:27:11
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 55, in export_location
+    export_opt_of_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'click_input'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 09:27:38
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 55, in export_location
+    export_opt_of_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'click_input'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 09:32:48
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 64, in export_location
+    combobox.select(TEXT_DESKTOP)
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 09:33:46
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 64, in export_location
+    combobox.select(TEXT_DESKTOP)
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 09:45:07
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 64, in export_location
+    combobox.select(TEXT_DESKTOP)
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 09:48:04
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 45, in export_location
+    ) = check_export_option(win_specs=export_window, export_opt_title="내보내기 위치")
+        ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_export_option.py", line 20, in check_export_option
+    export_opt.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 09:49:13
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 45, in export_location
+    ) = check_export_option(win_specs=export_window, export_opt_title="내보내기 위치")
+        ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_export_option.py", line 20, in check_export_option
+    export_opt.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 10:03:35
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 73, in run_exports
+    specs_filename(export_window=export_window)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\specs_filename\specs_filename.py", line 12, in specs_filename
+    ) = check_export_option(win_specs=export_window, export_opt_title="파일 이름 지정")
+        ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_export_option.py", line 20, in check_export_option
+    export_opt.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 10:20:33
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 74, in export_location
+    combobox.select("특정 폴더")
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 10:27:53
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 60, in export_location
+    print(type(main_menu.wrapper_object()))
+               ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 10:30:57
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 85, in export_location
+    combobox.select("특정 폴더")
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 10:32:35
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 57, in export_location
+    if main_menu == None:
+       ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'main_menu' where it is not associated with a value
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:14:20
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 119, in export_location
+    win_specs = check_main_menu(lightroom_window=win_specs, main_title=main_title)
+                                                 ^^^^^^^^^
+UnboundLocalError: cannot access local variable 'win_specs' where it is not associated with a value
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:14:50
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 119, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=main_title)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 75, in check_main_menu
+    return {["col"]: collapsible_selection, ["main_menu"]: export_opt_of_window}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: unhashable type: 'list'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:19:20
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, MAIN_TITLE=MAIN_TITLE)
+TypeError: check_main_menu() got an unexpected keyword argument 'MAIN_TITLE'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:19:52
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 48, in export_location
+    combobox.select("특정 폴더")
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:20:31
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 48, in export_location
+    combobox.select("특정 폴더")
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:29:28
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 38, in export_location
+    win_specs=collapsible_selection,
+              ^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'collapsible_selection' is not defined
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:37:06
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 79, in run_exports
+    set_file(export_window=export_window)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\set_file\set_file.py", line 8, in set_file
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 23, in check_main_menu
+    children_texts = collapsible_selection.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:39:10
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 85, in run_exports
+    img_size_adjust(export_window=export_window)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\img_size_adjust\img_size_adjust.py", line 10, in img_size_adjust
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 23, in check_main_menu
+    children_texts = collapsible_selection.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:41:46
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 23, in check_main_menu
+    children_texts = collapsible_selection.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:42:09
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 23, in check_main_menu
+    children_texts = collapsible_selection.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:42:56
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 25, in check_main_menu
+    children_texts = collapsible_selection.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:43:43
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 77, in run_exports
+    collapse_video_opt(export_window=export_window)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\video_opt\collapse_video_opt.py", line 8, in collapse_video_opt
+    close_needless_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\close_needless_menu.py", line 23, in close_needless_menu
+    children_texts = collapsible_selection.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:46:25
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 48, in export_location
+    combobox.select("특정 폴더")
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:48:00
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 48, in export_location
+    combobox.select("특정 폴더")
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 11:52:37
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 48, in export_location
+    combobox.select("특정 폴더")
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 12:01:07
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 48, in export_location
+    combobox.select("특정 폴더")
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 12:13:42
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 79, in run_exports
+    set_file(export_window=export_window)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\set_file\set_file.py", line 27, in set_file
+    combobox.select("JPEG")
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 12:17:58
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 77, in run_exports
+    collapse_video_opt(export_window=export_window)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\video_opt\collapse_video_opt.py", line 8, in collapse_video_opt
+    close_needless_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: close_needless_menu() got an unexpected keyword argument 'lightroom_window'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 12:32:43
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 77, in run_exports
+    collapse_video_opt(export_window=export_window)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\video_opt\collapse_video_opt.py", line 8, in collapse_video_opt
+    close_needless_menu(win_specs=export_window, main_title=MAIN_TITLE)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: close_needless_menu() got an unexpected keyword argument 'win_specs'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 12:33:49
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 83, in run_exports
+    collapse_credentials_opt(export_window=export_window)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\content_credentials_opt\collapse_credentials_opt.py", line 9, in collapse_credentials_opt
+    close_needless_menu(win_specs=export_window, main_title=MAIN_TITLE)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\close_needless_menu.py", line 37, in close_needless_menu
+    searched_title = check_title(win_specs=collapsible_selection, main_title=main_title)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\close_needless_menu.py", line 8, in check_title
+    children_texts = win_specs.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 12:39:51
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 79, in run_exports
+    set_file(export_window=export_window)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\set_file\set_file.py", line 8, in set_file
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 38, in check_main_menu
+    searched_title = check_title(win_specs=collapsible_selection, main_title=main_title)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 8, in check_title
+    children_texts = win_specs.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 12:41:34
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 79, in run_exports
+    set_file(export_window=export_window)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\set_file\set_file.py", line 8, in set_file
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 38, in check_main_menu
+    searched_title = check_title(win_specs=collapsible_selection, main_title=main_title)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 8, in check_title
+    children_texts = win_specs.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 12:42:47
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 85, in run_exports
+    img_size_adjust(export_window=export_window)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\img_size_adjust\img_size_adjust.py", line 10, in img_size_adjust
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 38, in check_main_menu
+    searched_title = check_title(win_specs=collapsible_selection, main_title=main_title)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 8, in check_title
+    children_texts = win_specs.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 12:45:26
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 77, in run_exports
+    collapse_video_opt(export_window=export_window)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\video_opt\collapse_video_opt.py", line 8, in collapse_video_opt
+    close_needless_menu(win_specs=export_window, main_title=MAIN_TITLE)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\close_needless_menu.py", line 39, in close_needless_menu
+    searched_title = check_title(win_specs=collapsible_selection, main_title=main_title)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\close_needless_menu.py", line 8, in check_title
+    children_texts = win_specs.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 12:46:28
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 48, in export_location
+    combobox.select("특정 폴더")
+    ^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 12:50:35
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uia_controls.py", line 238, in select
+    self._select(item)
+    ~~~~~~~~~~~~^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 678, in _select
+    raise IndexError("item '{0}' not found".format(item))
+IndexError: item '사용자 정의 이름 - 시퀀스' not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 73, in run_exports
+    specs_filename(export_window=export_window)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\specs_filename\specs_filename.py", line 34, in specs_filename
+    combobox.select("사용자 정의 이름 - 시퀀스")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uia_controls.py", line 263, in select
+    raise IndexError("item '{0}' not found or can't be accessed".format(item))
+IndexError: item '사용자 정의 이름 - 시퀀스' not found or can't be accessed
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 12:51:10
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 234, in get_elem_interface
+    iface = cur_ptrn.QueryInterface(cls_name)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\comtypes\_post_coinit\unknwn.py", line 395, in QueryInterface
+    self.__com_QueryInterface(byref(iid), byref(p))  # type: ignore
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+ValueError: NULL COM pointer access
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 31, in check_main_menu
+    expand_state = export_opt_of_window.wrapper_object().get_expand_state()
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 556, in get_expand_state
+    return self.iface_expand_collapse.CurrentExpandCollapseState
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 132, in __get__
+    value = self.fget(obj)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 210, in iface_expand_collapse
+    return uia_defs.get_elem_interface(elem, "ExpandCollapse")
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 236, in get_elem_interface
+    raise NoPatternInterfaceError()
+pywinauto.uia_defines.NoPatternInterfaceError
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 12:52:00
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 234, in get_elem_interface
+    iface = cur_ptrn.QueryInterface(cls_name)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\comtypes\_post_coinit\unknwn.py", line 395, in QueryInterface
+    self.__com_QueryInterface(byref(iid), byref(p))  # type: ignore
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+ValueError: NULL COM pointer access
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 31, in check_main_menu
+    expand_state = export_opt_of_window.wrapper_object().iface_expand_collapse
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 132, in __get__
+    value = self.fget(obj)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 210, in iface_expand_collapse
+    return uia_defs.get_elem_interface(elem, "ExpandCollapse")
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 236, in get_elem_interface
+    raise NoPatternInterfaceError()
+pywinauto.uia_defines.NoPatternInterfaceError
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 12:52:34
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 234, in get_elem_interface
+    iface = cur_ptrn.QueryInterface(cls_name)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\comtypes\_post_coinit\unknwn.py", line 395, in QueryInterface
+    self.__com_QueryInterface(byref(iid), byref(p))  # type: ignore
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+ValueError: NULL COM pointer access
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 31, in check_main_menu
+    expand_state = export_opt_of_window.wrapper_object().is_expanded()
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 561, in is_expanded
+    state = self.get_expand_state()
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 556, in get_expand_state
+    return self.iface_expand_collapse.CurrentExpandCollapseState
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 132, in __get__
+    value = self.fget(obj)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 210, in iface_expand_collapse
+    return uia_defs.get_elem_interface(elem, "ExpandCollapse")
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 236, in get_elem_interface
+    raise NoPatternInterfaceError()
+pywinauto.uia_defines.NoPatternInterfaceError
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:01:07
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 79, in run_exports
+    set_file(export_window=export_window)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\set_file\set_file.py", line 8, in set_file
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 22, in check_main_menu
+    title_by_collapsible = check_title(
+        win_specs=collapsible_selection, main_title=main_title
+    )
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_title.py", line 7, in check_title
+    children_texts = win_specs.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:02:46
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 27, in check_main_menu
+    title_by_collapsible = check_title(
+        win_specs=collapsible_selection, main_title=main_title
+    )
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_title.py", line 7, in check_title
+    children_texts = win_specs.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:06:01
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_title.py", line 10, in check_title
+    children_texts = win_specs.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 27, in check_main_menu
+    title_by_collapsible = check_title(
+        win_specs=collapsible_selection, main_title=main_title
+    )
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_title.py", line 13, in check_title
+    print(f"[{main_title}]에 해당하는 자식 타이틀 없음. : {children_texts}")
+                                                           ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'children_texts' where it is not associated with a value
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:07:10
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_title.py", line 9, in check_title
+    children_texts = win_specs.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 27, in check_main_menu
+    title_by_collapsible = check_title(
+        win_specs=collapsible_selection, main_title=main_title
+    )
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_title.py", line 22, in check_title
+    print(f"[{main_title}]에 해당하는 자식 타이틀 없음. : {children_texts}")
+                                                           ^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'children_texts' where it is not associated with a value
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:19:32
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 234, in get_elem_interface
+    iface = cur_ptrn.QueryInterface(cls_name)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\comtypes\_post_coinit\unknwn.py", line 395, in QueryInterface
+    self.__com_QueryInterface(byref(iid), byref(p))  # type: ignore
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+ValueError: NULL COM pointer access
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 21, in check_main_menu
+    export_opt_of_window.wrapper_object().collapse()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 539, in collapse
+    self.iface_expand_collapse.Collapse()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 132, in __get__
+    value = self.fget(obj)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 210, in iface_expand_collapse
+    return uia_defs.get_elem_interface(elem, "ExpandCollapse")
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 236, in get_elem_interface
+    raise NoPatternInterfaceError()
+pywinauto.uia_defines.NoPatternInterfaceError
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:19:50
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 31, in check_main_menu
+    f"타이틀 부모요소 is_visible: {export_opt_of_window.wrapper_object().writable_props.is_visible}"
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'list' object has no attribute 'is_visible'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:23:55
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 234, in get_elem_interface
+    iface = cur_ptrn.QueryInterface(cls_name)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\comtypes\_post_coinit\unknwn.py", line 395, in QueryInterface
+    self.__com_QueryInterface(byref(iid), byref(p))  # type: ignore
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+ValueError: NULL COM pointer access
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 21, in check_main_menu
+    export_opt_of_window.wrapper_object().minimize()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 449, in minimize
+    iface = self.iface_window
+            ^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 132, in __get__
+    value = self.fget(obj)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 322, in iface_window
+    return uia_defs.get_elem_interface(elem, "Window")
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 236, in get_elem_interface
+    raise NoPatternInterfaceError()
+pywinauto.uia_defines.NoPatternInterfaceError
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:28:29
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 24, in run
+    lightroom.wait("exists enabled visible ready", timeout=10)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 529, in wait
+    wait_until(timeout, retry_interval,
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+               lambda: self.__check_all_conditions(check_method_names, retry_interval))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 375, in wait_until
+    raise err
+pywinauto.timings.TimeoutError: timed out
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:29:05
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 19, in check_main_menu
+    test = export_opt_of_window.wrapper_object().menu_items()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UIAWrapper' object has no attribute 'menu_items'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:29:54
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 234, in get_elem_interface
+    iface = cur_ptrn.QueryInterface(cls_name)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\comtypes\_post_coinit\unknwn.py", line 395, in QueryInterface
+    self.__com_QueryInterface(byref(iid), byref(p))  # type: ignore
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+ValueError: NULL COM pointer access
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 19, in check_main_menu
+    test = export_opt_of_window.wrapper_object().can_select_multiple()
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 640, in can_select_multiple
+    return self.iface_selection.CurrentCanSelectMultiple
+           ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 132, in __get__
+    value = self.fget(obj)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 217, in iface_selection
+    return uia_defs.get_elem_interface(elem, "Selection")
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 236, in get_elem_interface
+    raise NoPatternInterfaceError()
+pywinauto.uia_defines.NoPatternInterfaceError
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:30:23
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 234, in get_elem_interface
+    iface = cur_ptrn.QueryInterface(cls_name)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\comtypes\_post_coinit\unknwn.py", line 395, in QueryInterface
+    self.__com_QueryInterface(byref(iid), byref(p))  # type: ignore
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+ValueError: NULL COM pointer access
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 19, in check_main_menu
+    test = export_opt_of_window.wrapper_object().get_expand_state()
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 556, in get_expand_state
+    return self.iface_expand_collapse.CurrentExpandCollapseState
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 132, in __get__
+    value = self.fget(obj)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 210, in iface_expand_collapse
+    return uia_defs.get_elem_interface(elem, "ExpandCollapse")
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 236, in get_elem_interface
+    raise NoPatternInterfaceError()
+pywinauto.uia_defines.NoPatternInterfaceError
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:35:33
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 23, in check_main_menu
+    title_by_collapsible = check_title(
+        win_specs=collapsible_selection, main_title=main_title
+    )
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_title.py", line 7, in check_title
+    win_specs.print_control_identifiers()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 613, in print_control_identifiers
+    this_ctrl = self.__resolve_control(self.criteria)[-1]
+                ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:47:47
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(export_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 23, in check_main_menu
+    title_by_collapsible = check_title(
+        win_specs=export_window, main_title=main_title
+    )
+TypeError: check_title() got an unexpected keyword argument 'win_specs'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:51:59
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 41, in export_location
+    time.sleep(1000)
+    ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'?
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:55:15
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(export_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 23, in check_main_menu
+    title_by_collapsible = check_title(
+        export_window=collapsible_selection, main_title=main_title
+    )
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_title.py", line 7, in check_title
+    children_texts = export_window.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 13:56:39
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(export_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 25, in check_main_menu
+    title_by_collapsible = check_title(
+        export_window=collapsible_selection, main_title=main_title
+    )
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_title.py", line 7, in check_title
+    children_texts = export_window.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 14:13:16
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(export_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 59, in check_main_menu
+    export_opt_of_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'export_opt_of_window' where it is not associated with a value
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 14:20:37
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 73, in run_exports
+    specs_filename(export_window=export_window)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\specs_filename\specs_filename.py", line 10, in specs_filename
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+TypeError: check_main_menu() got an unexpected keyword argument 'lightroom_window'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 14:21:17
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 73, in run_exports
+    specs_filename(export_window=export_window)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\specs_filename\specs_filename.py", line 10, in specs_filename
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+TypeError: check_main_menu() got an unexpected keyword argument 'lightroom_window'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 14:21:44
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(export_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 20, in check_main_menu
+    is_exists_collapsible = collapsible_menu.exists()
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 427, in exists
+    self.__resolve_control(exists_criteria, timeout, retry_interval)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 98, in find_element
+    raise exception
+pywinauto.findwindows.ElementAmbiguousError: There are 2 elements that match the criteria {'title': 'Collapsible Section', 'control_type': 'Pane', 'top_level_only': False, 'enabled_only': False, 'visible_only': False, 'parent': <uia_element_info.UIAElementInfo - '2개의 파일 내보내기', Afx:0000000140000000:0, 789818>, 'backend': 'uia'}
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 14:24:22
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 73, in run_exports
+    specs_filename(export_window=export_window)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\specs_filename\specs_filename.py", line 10, in specs_filename
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+TypeError: check_main_menu() got an unexpected keyword argument 'lightroom_window'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 14:25:46
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 77, in run_exports
+    collapse_video_opt(export_window=export_window)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\video_opt\collapse_video_opt.py", line 8, in collapse_video_opt
+    close_needless_menu(win_specs=export_window, main_title=MAIN_TITLE)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\close_needless_menu.py", line 23, in close_needless_menu
+    title_by_collapsible = check_title(
+        win_specs=collapsible_selection, main_title=main_title
+    )
+TypeError: check_title() got an unexpected keyword argument 'win_specs'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 14:29:59
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 77, in run_exports
+    collapse_video_opt(export_window=export_window)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\video_opt\collapse_video_opt.py", line 8, in collapse_video_opt
+    close_needless_menu(win_specs=export_window, main_title=MAIN_TITLE)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: close_needless_menu() got an unexpected keyword argument 'win_specs'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 14:30:52
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 79, in run_exports
+    set_file(export_window=export_window)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\set_file\set_file.py", line 8, in set_file
+    win_specs = check_main_menu(lightroom_window=export_window, main_title=MAIN_TITLE)
+TypeError: check_main_menu() got an unexpected keyword argument 'lightroom_window'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-12 14:32:02
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 30, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 83, in run_exports
+    collapse_credentials_opt(export_window=export_window)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\exports\content_credentials_opt\collapse_credentials_opt.py", line 9, in collapse_credentials_opt
+    close_needless_menu(export_window=export_window, main_title=MAIN_TITLE)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\close_needless_menu.py", line 40, in close_needless_menu
+    title_by_collapsible = check_title(
+        export_window=collapsible_selection, main_title=main_title
+    )
+  File "C:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2/src\lightroom\utils\check_title.py", line 7, in check_title
+    children_texts = export_window.wrapper_object().children_texts()
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 267, in wrapper_object
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 84, in find_element
+    elements = find_elements(**kwargs)
+  File "c:\Users\USER\Documents\code\export-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 328, in find_elements
+    raise ElementNotFoundError("found_index is specified as {0}, but {1} window/s found".format(
+        found_index, len(elements)))
+pywinauto.findwindows.ElementNotFoundError: found_index is specified as 0, but 0 window/s found
+
+============================================================
+

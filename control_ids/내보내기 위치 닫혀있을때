@@ -4,70 +4,51 @@
 라이트룸 실행여부: 중지
 오버레이 실행여부: 중지
 ----------------- [📢] 상태 변경 감지: 사용자정보 올바르게 입력함 -----------------
-사용자이름: dfd
-전화번호: dfds
+사용자이름: sd
+전화번호: sd
 라이트룸 실행여부: 중지
 오버레이 실행여부: 중지
-✅ Lightroom 실행 감지됨 (PID: 7180)
-✅ Lightroom에 성공적으로 연결됨!
------------------ [📢] 상태 변경 감지: 오버레이 실행 완료 -----------------
-사용자이름: dfd
-전화번호: dfds
-라이트룸 실행여부: 중지
-오버레이 실행여부: 실행
-라이트룸 창 준비완료
-🚀 Lightroom 내보내기 자동화 실행 중...
+🚀 Lightroom 실행 준비...
+🚀 Lightroom Classic 실행 시작...
+✅ Lightroom 실행 감지됨!
+Main - 라이트룸 활성화 완료
+Main - 라이트룸 모니터링 시작
+Main - 오버레이 실행 시작
+Main - 라이트룸 자동화 시작
+Lightroom에 성공적으로 연결됨!
 ✅ 전체 사진 선택 Ctrl + A 실행 - 키값 ^a 전송 성공
-파일(F) 메뉴 클릭 시작..
+---> [파일(F)] 메뉴 찾기 시작..
+---> [파일(F)] 요소를 찾았습니다.
 ✅ 내보내기 단축키 ^+E - 키값 ^+E 전송 성공
 ✅ '내보내기' 창 감지 완료!
-Collapsible Section 메뉴 클릭 시작..
+---> [내보내기 위치] 메뉴 찾기 시작..
+---> [내보내기 위치] 요소를 찾았습니다.
 Control Identifiers:
 
-Pane - 'Collapsible Section'    (L712, T595, R1452, B675)
-['Pane', 'Collapsible SectionPane', 'Collapsible Section', 'Pane0', 'Pane1']
-child_window(title="Collapsible Section", auto_id="100", control_type="Pane")
+Pane - '내보내기 위치'    (L713, T324, R1451, B349)
+['Pane', '내보내기 위치Pane', '내보내기 위치', '내보내기 위치0', '내보내기 위치1', 'Pane0', 'Pane1']
+child_window(title="내보내기 위치", auto_id="100", control_type="Pane")
    | 
-   | Pane - '후처리'    (L712, T595, R1452, B675)
-   | ['후처리', '후처리Pane', 'Pane2']
-   | child_window(title="후처리", auto_id="100", control_type="Pane")
+   | Button - ''    (L719, T330, R733, B344)
+   | ['Button']
+   | child_window(auto_id="65535", control_type="Button")
+   | 
+   | Static - '내보내기 위치'    (L738, T330, R818, B344)
+   | ['내보내기 위치2', 'Static', '내보내기 위치Static', 'Static0', 'Static1']
+   | child_window(title="내보내기 위치", auto_id="1746030192", control_type="Text")
+   | 
+   | Pane - 'View'    (L818, T326, R1451, B347)
+   | ['Pane2', 'ViewPane', 'View', 'ViewPane0', 'ViewPane1', 'View0', 'View1']
+   | child_window(title="View", auto_id="100", control_type="Pane")
    |    | 
-   |    | Static - '내보낸 후:'    (L737, T609, R869, B623)
-   |    | ['Static', '내보낸 후:', '내보낸 후:Static', '내보낸 후:0', '내보낸 후:1', 'Static0', 'Static1', '내보낸 후:Static0', '내보낸 후:Static1']
-   |    | child_window(title="내보낸 후:", auto_id="572203136", control_type="Text")
-   |    | 
-   |    | ComboBox - '내보낸 후:'    (L874, T605, R1427, B626)
-   |    | ['내보낸 후:ComboBox', '내보낸 후:2', 'ComboBox']
-   |    | child_window(title="내보낸 후:", auto_id="65535", control_type="ComboBox")
+   |    | Pane - 'View'    (L818, T330, R1451, B343)
+   |    | ['Pane3', 'ViewPane2', 'View2']
+   |    | child_window(title="View", auto_id="100", control_type="Pane")
    |    |    | 
-   |    |    | Static - '내보낸 후:'    (L3, T3, R533, B18)
-   |    |    | ['Static2', '내보낸 후:3', '내보낸 후:Static2']
-   |    |    | child_window(title="내보낸 후:", control_type="Text")
-   |    |    | 
-   |    |    | Button - '열기'    (L1411, T606, R1426, B625)
-   |    |    | ['Button', '열기', '열기Button', 'Button0', 'Button1']
-   |    |    | child_window(title="열기", auto_id="DropDown", control_type="Button")
-   |    | 
-   |    | Static - '응용 프로그램:'    (L737, T644, R869, B658)
-   |    | ['응용 프로그램:', '응용 프로그램:Static', 'Static3']
-   |    | child_window(title="응용 프로그램:", auto_id="572205696", control_type="Text")
-   |    | 
-   |    | Pane - ' (Bridge View)'    (L874, T637, R1427, B665)
-   |    | ['Pane3', ' (Bridge View)', ' (Bridge View)Pane', ' (Bridge View)0', ' (Bridge View)1', ' (Bridge View)Pane0', ' (Bridge View)Pane1']
-   |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
-   |    |    | 
-   |    |    | Static - '응용 프로그램 선택...'    (L874, T644, R1352, B658)
-   |    |    | ['응용 프로그램 선택...', '응용 프로그램 선택...Static', 'Static4']
-   |    |    | child_window(title="응용 프로그램 선택...", auto_id="572194432", control_type="Text")
-   |    |    | 
-   |    |    | Pane - ' (Bridge View)'    (L1357, T648, R1364, B655)
-   |    |    | ['Pane4', ' (Bridge View)2', ' (Bridge View)Pane2']
-   |    |    | child_window(title=" (Bridge View)", auto_id="65535", control_type="Pane")
-   |    |    | 
-   |    |    | Button - '선택...'    (L1369, T640, R1424, B662)
-   |    |    | ['Button2', '선택...', '선택...Button']
-   |    |    | child_window(title="선택...", auto_id="65535", control_type="Button")
-pydevd warning: Computing repr of collapsible_selection (WindowSpecification) was slow (took 0.96s)
+   |    |    | Static - '바탕 화면 / 제목 없는 내보내기'    (L833, T330, R1436, B343)
+   |    |    | ['바탕 화면 / 제목 없는 내보내기Static', 'Static2', '바탕 화면 / 제목 없는 내보내기']
+   |    |    | child_window(title="바탕 화면 / 제목 없는 내보내기", auto_id="1746023536", control_type="Text")
+pydevd warning: Computing repr of export_opt_of_window (WindowSpecification) was slow (took 0.68s)
 Customize report timeout by setting the `PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT` environment variable to a higher timeout (default is: 0.5s)
-pydevd warning: Computing repr of win_specs (WindowSpecification) was slow (took 0.85s)
+pydevd warning: Computing repr of export_window (WindowSpecification) was slow (took 0.50s)
 Customize report timeout by setting the `PYDEVD_WARN_SLOW_RESOLVE_TIMEOUT` environment variable to a higher timeout (default is: 0.5s)
