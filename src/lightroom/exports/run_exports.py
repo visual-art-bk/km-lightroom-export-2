@@ -1,7 +1,7 @@
 import time
 import ctypes
 import pyautogui
-from pywinauto import WindowSpecification
+from pywinauto import WindowSpecification, keyboard
 from lightroom.exports.selects.open_export_window import open_export_window
 from lightroom.utils.select_ui import select_ui
 from lightroom.utils.send_shortcuts import send_shortcuts

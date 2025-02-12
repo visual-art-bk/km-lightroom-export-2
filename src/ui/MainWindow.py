@@ -1,4 +1,4 @@
-import os
+import sys
 from PySide6.QtWidgets import (
     QMainWindow,
     QLabel,
@@ -12,44 +12,37 @@ from PySide6.QtWidgets import (
 from PySide6.QtCore import Qt
 from state_manager import StateManager, AppState
 from lightroom import LightroomAutomationThread
-from ui.overlay.OverlayWindow import OverlayWindow
 from ui.msg_box import create_error_msg, create_done_msg
-from monitorings.LightroomMonitorThread import LightroomMonitorThread
+
+# from monitorings.LightroomMonitorThread import LightroomMonitorThread
 from lightroom.LightroomLaunchThread import LightroomLaunchThread
 from helpers.log_exception_to_file import log_exception_to_file
+from ui.overlay.NewOverlayWindow import NewOverlayWindow
 
 
 class MainWindow(QMainWindow):
     def __init__(
         self,
-        x=None,
-        y=0,
         width=300,
         height=200,
         lock_user_input=True,
-        overlay_mode=True,
     ):
         super().__init__()
 
         self.lock_user_input = lock_user_input
 
-        self.overlay_mode = overlay_mode
-
         self.init_state_manager()
-
         self.setWindowTitle("다비 내보내기 베타 V.1.0")
 
         self.init_window_position(
             height=height,
             width=width,
         )
-
         self.init_window_layout()
 
         self.overlay_window = None
-        self.lightroom_monitor = None
         self.thread_lightroom_automation = None
-        self.thread_lightroom_mornitor = None
+        # self.thread_lightroom_mornitor = None
         self.thread_lightroom_launcher = None
 
     def init_window_layout(self):
@@ -80,53 +73,70 @@ class MainWindow(QMainWindow):
         self.state_manager.subscribe(self.on_state_global_change)  # 상태 변경 구독
 
     def init_window_position(self, width, height):
-        """✅ 창을 화면 정중앙 (상하 & 좌우) 정렬"""
+        """창을 화면 정중앙 (상하 & 좌우) 정렬"""
 
-        # ✅ 현재 화면의 해상도 가져오기
+        #  현재 화면의 해상도 가져오기
         screen_geometry = self.screen().availableGeometry()
         screen_width = screen_geometry.width()
         screen_height = screen_geometry.height()
 
-        # ✅ 창을 화면 정중앙에 배치 (좌우 & 상하)
         x = (screen_width - width) // 2  # 좌우 정가운데
         y = (screen_height - height) // 2  # 상하 정가운데
 
-        # ✅ 창의 위치 및 크기 설정
+        # 창의 위치 및 크기 설정
         self.setGeometry(x, y, width, height)
 
-        # ✅ 창을 항상 최상단에 고정
+        # 창을 항상 최상단에 고정
         self.setWindowFlags(Qt.WindowStaysOnTopHint)
 
-    def delete_overlay(self):
-        self.overlay_window = None
-        OverlayWindow._instance = None
-
-    def get_user_infos(self):
-        return {
-            "username": self.username_entry.text().strip(),
-            "phone_number": self.phone_number_entry.text().strip(),
-        }
-
     def init_threads(self):
+        # 라이트룸 실행 스레드
         self.thread_lightroom_launcher = LightroomLaunchThread()
-
-        self.thread_lightroom_automation = LightroomAutomationThread(
-            lock_user_input=self.lock_user_input
-        )
-        self.thread_lightroom_mornitor = LightroomMonitorThread()
-
         self.thread_lightroom_launcher.lightroom_started.connect(
             self.on_lightroom_launcher
+        )
+
+        # 자동화 스레드
+        self.thread_lightroom_automation = LightroomAutomationThread(
+            lock_user_input=self.lock_user_input
         )
         self.thread_lightroom_automation.finished.connect(
             self.on_lightroom_automation_finished
         )
-        self.thread_lightroom_mornitor.lightroom_closed_mornitoring.connect(
-            self.on_lightroom_closed_mornitoring
-        )
-        self.thread_lightroom_automation.failed_automation.connect(
+        self.thread_lightroom_automation.failed.connect(
             self.on_lightroom_automation_failed
         )
+
+        # 모니터링 스레드
+        # self.thread_lightroom_mornitor = LightroomMonitorThread()
+        # self.thread_lightroom_mornitor.lightroom_closed_mornitoring.connect(
+        #     self.on_lightroom_closed_mornitoring
+        # )
+
+    def create_overlay(self):
+        """✅ 독립적인 오버레이 창을 생성하고 부모 윈도우와 시그널 연결"""
+        if self.overlay_window is not None:
+            print("이미 오버레이가 생성 중입니다.")
+            return
+
+        self.overlay_window = NewOverlayWindow()  # ✅ 독립적인 오버레이 생성
+        self.overlay_window.overlay_closed.connect(
+            self.on_overlay_closed
+        )  # ✅ 시그널 연결
+        self.overlay_window.show()
+
+    def on_overlay_closed(self):
+        """✅ 오버레이가 닫힐 때 호출되는 부모 이벤트 핸들러"""
+        print("✅ 부모 윈도우에서 오버레이 닫힘 감지 완료!")
+        self.overlay_window = None  # ✅ 메모리 해제
+
+    def close_overlay(self):
+        """✅ 오버레이 닫기 버튼 이벤트 핸들러"""
+        print("오버레이에서 닫기 신호가 들어왔습습니다.")
+        if self.overlay_window:
+            self.overlay_window.close()
+            self.overlay_window.deleteLater()
+            self.overlay_window = None
 
     def run_main_window(self):
         self.init_threads()
@@ -146,7 +156,7 @@ class MainWindow(QMainWindow):
                 )
                 return
 
-            self.hide()
+            self.showMinimized()
 
             self.state_manager.update_state(
                 phone_number=phone_number,
@@ -166,34 +176,31 @@ class MainWindow(QMainWindow):
         if failed_automation == False:
             return
 
-        self.delete_overlay()
+        self.close_overlay()
         self.show()
         self.show_err_msg()
 
     def on_lightroom_launcher(self, lightroom_started):
         if lightroom_started == True:
             print("Main - 라이트룸 활성화 완료")
-            
-            print("Main - 라이트룸 모니터링 시작")
-            self.thread_lightroom_mornitor.start()
+
+            # print("Main - 라이트룸 모니터링 시작")
+            # self.thread_lightroom_mornitor.start()
 
             print("Main - 오버레이 실행 시작")
-            # self.create_overlay()
+            self.create_overlay()
 
             print("Main - 라이트룸 자동화 시작")
             self.thread_lightroom_automation.start()
 
-
     def on_lightroom_automation_finished(self, finished):
         if self.overlay_window is not None and finished == True:
-            self.delete_overlay()
+            self.close_overlay()
 
             self.show()
 
             msg_box = create_done_msg(parent=self)
             msg_box.exec()
-
-            self.cleanup_and_exit()
 
     def on_lightroom_closed_mornitoring(self):
         print("Main - Lightroom 종료 감지 → 프로그램 종료을 종료합니다.")
@@ -210,23 +217,6 @@ class MainWindow(QMainWindow):
         print(f"오버레이 실행여부: {'실행' if new_state.overlay_running else '중지'}")
         print(f"                                                      ")
 
-    def create_overlay(self):
-        if self.overlay_window is not None:
-            print("이미 오버레이가 생성중입니다.")
-            return
-
-        self.overlay_window = OverlayWindow.create_overlay(
-            width=400,
-            height=225,
-            bg_color="#f7dfdf",
-            opacity=1,
-            text_color="black",
-            font_size=20,
-            y_offset=24,
-            blur_radius=50,
-        )
-        self.overlay_window.show()
-
     def show_warning(self, text="⚠️ 경고: 잘못된 작업입니다."):
         msg_box = QMessageBox(self)
         msg_box.setIcon(QMessageBox.Icon.Information)  # ⚠️ 경고 아이콘
@@ -239,44 +229,70 @@ class MainWindow(QMainWindow):
         error_msg_box = create_error_msg(parent=self)
         error_msg_box.exec()
 
+    def get_user_infos(self):
+        return {
+            "username": self.username_entry.text().strip(),
+            "phone_number": self.phone_number_entry.text().strip(),
+        }
+
     def cleanup_and_exit(self):
-        """💡 프로그램 종료 전 모든 리소스를 완전히 정리하는 함수"""
+        """💡 프로그램 종료 전 모든 리소스를 완전히 정리"""
         print("🔄 모든 리소스 정리 중...")
 
-        # ✅ 1. 스레드 강제 종료 (QThread가 완전히 종료되었는지 확인)
+        # ✅ Lightroom 자동화 스레드 정리
         if self.thread_lightroom_automation:
             if self.thread_lightroom_automation.isRunning():
-                print("⚠️ Lightroom 자동화 스레드 강제 종료")
-                self.thread_lightroom_automation.terminate()
-            self.thread_lightroom_automation.quit()
-            self.thread_lightroom_automation.wait()
+                print("⚠️ Lightroom 자동화 스레드 종료 중...")
+                self.thread_lightroom_automation.quit()
+                self.thread_lightroom_automation.wait()
             self.thread_lightroom_automation = None
 
-        if self.thread_lightroom_mornitor:
-            if self.thread_lightroom_mornitor.isRunning():
-                print("⚠️ Lightroom 모니터링 스레드 강제 종료")
-                self.thread_lightroom_mornitor.terminate()
-            self.thread_lightroom_mornitor.quit()
-            self.thread_lightroom_mornitor.wait()
-            self.thread_lightroom_mornitor = None
+        # ✅ Lightroom 모니터링 스레드 정리
+        # if self.thread_lightroom_mornitor:
+        #     if self.thread_lightroom_mornitor.isRunning():
+        #         print("⚠️ Lightroom 모니터링 스레드 종료 중...")
+        #         self.thread_lightroom_mornitor.quit()
+        #         self.thread_lightroom_mornitor.wait()
+        #     self.thread_lightroom_mornitor = None  # ✅ 잘못된 변수명 수정
 
-        # ✅ 2. 오버레이 정리 (UI 리소스 해제)
+        # ✅ 오버레이 정리
         if self.overlay_window:
             self.overlay_window.close()
             self.overlay_window.deleteLater()
             self.overlay_window = None
-        OverlayWindow._instance = None  # 싱글톤 인스턴스 초기화
 
-        # ✅ 3. 상태 관리자 해제
+        # ✅ 상태 관리자 정리
         self.state_manager = None
 
-        # ✅ 4. UI 창 닫기
+        # ✅ UI 안전하게 종료
+        print("✅ 프로그램 정상 종료")
         self.close()
-        self.deleteLater()  # UI 객체를 명시적으로 제거
-
-        # ✅ 5. QApplication 완전 종료
         QApplication.quit()
+        sys.exit(0)  # ✅ 안전한 시스템 종료
 
-        # ✅ 6. **운영체제 프로세스 강제 종료 (최후의 수단)**
-        print("🚀 모든 리소스 해제 완료 → 시스템 프로세스 강제 종료")
-        os._exit(0)  # 💀 시스템 차원에서 프로세스 완전 제거
+    def closeEvent(self, event):
+        """✅ 메인 윈도우가 닫힐 때 모든 리소스 정리"""
+        print("🔄 프로그램 종료: 모든 리소스 정리 중...")
+
+        # ✅ 실행 중인 스레드 안전하게 종료
+        if self.thread_lightroom_automation:
+            print("⚠️ Lightroom 자동화 스레드 종료 중...")
+            self.thread_lightroom_automation.quit()
+            self.thread_lightroom_automation.wait()
+            self.thread_lightroom_automation = None
+
+        # if self.thread_lightroom_mornitor:
+        #     print("⚠️ Lightroom 모니터링 스레드 종료 중...")
+        #     self.thread_lightroom_mornitor.quit()
+        #     self.thread_lightroom_mornitor.wait()
+        #     self.thread_lightroom_mornitor = None
+
+        # ✅ 오버레이 창 닫기
+        if self.overlay_window:
+            print("⚠️ 오버레이 창 닫기...")
+            self.overlay_window.close()
+            self.overlay_window.deleteLater()
+            self.overlay_window = None
+
+        print("✅ 모든 리소스 정리 완료. 프로그램 종료.")
+        event.accept()  # ✅ 정상적으로 창을 닫음
