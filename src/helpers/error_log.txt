@@ -4963,3 +4963,241 @@ pywinauto.findwindows.ElementNotFoundError: {'title_re': '\\d+개(?:의)? 파일
 
 ============================================================
 
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-13 09:35:50
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 31, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(export_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 23, in check_main_menu
+    is_exists_collapsible = collapsible_menu.exists()
+                            ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'exists'
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-13 09:45:25
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 59, in _set_cursor_pos
+    win32api.SetCursorPos(coords)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+pywintypes.error: (0, 'SetCursorPos', 'No error message is available')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 31, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(export_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 58, in check_main_menu
+    export_opt_of_window.click_input()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\base_wrapper.py", line 774, in click_input
+    _perform_click_input(button, coords, double, button_down, button_up,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         wheel_dist=wheel_dist, pressed=pressed,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         key_down=key_down, key_up=key_up)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 137, in _perform_click_input
+    _set_cursor_pos((coords[0], coords[1]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 62, in _set_cursor_pos
+    raise RuntimeError("There is no active desktop required for moving mouse cursor!\n")
+RuntimeError: There is no active desktop required for moving mouse cursor!
+
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-13 10:02:24
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uia_controls.py", line 238, in select
+    self._select(item)
+    ~~~~~~~~~~~~^^^^^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 678, in _select
+    raise IndexError("item '{0}' not found".format(item))
+IndexError: item '특정 폴더' not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 233, in get_elem_interface
+    cur_ptrn = element_info.GetCurrentPattern(ptrn_id)
+_ctypes.COMError: (-2147220991, '이벤트에서 가입자를 불러낼 수 없습니다.', (None, None, None, 0, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uia_controls.py", line 279, in selected_text
+    selection = self.get_selection()
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 579, in get_selection
+    ptrs_array = self.iface_selection.GetCurrentSelection()
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 132, in __get__
+    value = self.fget(obj)
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 217, in iface_selection
+    return uia_defs.get_elem_interface(elem, "Selection")
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\uia_defines.py", line 236, in get_elem_interface
+    raise NoPatternInterfaceError()
+pywinauto.uia_defines.NoPatternInterfaceError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uia_controls.py", line 253, in select
+    if self.selected_text() != item:
+       ~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uia_controls.py", line 286, in selected_text
+    return self.iface_value.CurrentValue
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ctypes.COMError: (-2147220991, '이벤트에서 가입자를 불러낼 수 없습니다.', (None, None, None, 0, None))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 31, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 48, in export_location
+    combobox.select("특정 폴더")
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uia_controls.py", line 266, in select
+    self.collapse()
+    ~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uia_controls.py", line 162, in collapse
+    if not self.is_expanded():
+           ~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 561, in is_expanded
+    state = self.get_expand_state()
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uia_controls.py", line 188, in get_expand_state
+    return super(ComboBoxWrapper, self).get_expand_state()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\controls\uiawrapper.py", line 556, in get_expand_state
+    return self.iface_expand_collapse.CurrentExpandCollapseState
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ctypes.COMError: (-2147220991, '이벤트에서 가입자를 불러낼 수 없습니다.', (None, None, None, 0, None))
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-13 10:03:22
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 250, in __resolve_control
+    ctrl = wait_until_passes(
+        timeout,
+    ...<5 lines>...
+         controls.InvalidElement),
+        criteria)
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 458, in wait_until_passes
+    raise err
+pywinauto.timings.TimeoutError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 31, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 73, in run_exports
+    specs_filename(export_window=export_window)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\exports\specs_filename\specs_filename.py", line 10, in specs_filename
+    win_specs = check_main_menu(export_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 28, in check_main_menu
+    export_opt_of_window.click_input()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 379, in __getattribute__
+    ctrls = self.__resolve_control(self.criteria)
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 261, in __resolve_control
+    raise e.original_exception
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 436, in wait_until_passes
+    func_val = func(*args, **kwargs)
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 222, in __get_ctrl
+    ctrl = self.backend.generic_wrapper_class(findwindows.find_element(**ctrl_criteria))
+                                              ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\findwindows.py", line 87, in find_element
+    raise ElementNotFoundError(kwargs)
+pywinauto.findwindows.ElementNotFoundError: {'title_re': '\\d+개(?:의)? 파일 내보내기', 'control_type': 'Window', 'top_level_only': False, 'enabled_only': False, 'visible_only': False, 'parent': <uia_element_info.UIAElementInfo - 'Lightroom Catalog - Adobe Photoshop Lightroom Classic - 라이브러리', AgWinMainFrame, 1835568>, 'backend': 'uia'}
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-13 10:51:40
+============================================================
+Lightroom 자동화 실패
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 59, in _set_cursor_pos
+    win32api.SetCursorPos(coords)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+pywintypes.error: (0, 'SetCursorPos', 'No error message is available')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 33, in run
+    run_exports(lightroom=lightroom, lock_user_input=self.lock_user_input)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 71, in run_exports
+    export_location(export_window=export_window, app_state=app_state)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\exports\export_location\export_location.py", line 36, in export_location
+    win_specs = check_main_menu(export_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 58, in check_main_menu
+    export_opt_of_window.click_input()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\base_wrapper.py", line 774, in click_input
+    _perform_click_input(button, coords, double, button_down, button_up,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         wheel_dist=wheel_dist, pressed=pressed,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         key_down=key_down, key_up=key_up)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 137, in _perform_click_input
+    _set_cursor_pos((coords[0], coords[1]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\ex-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 62, in _set_cursor_pos
+    raise RuntimeError("There is no active desktop required for moving mouse cursor!\n")
+RuntimeError: There is no active desktop required for moving mouse cursor!
+
+
+============================================================
+
