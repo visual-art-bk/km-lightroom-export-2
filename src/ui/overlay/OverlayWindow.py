@@ -5,6 +5,7 @@ from PySide6.QtWidgets import (
 from PySide6.QtCore import Qt, Signal
 from ui.buttons.close_btn import close_btn
 from ui.content_layout.content_layout import content_layout
+from ui.effects.ImageSlideshow import ImageSlideshow
 
 
 class OverlayWindow(QWidget):
@@ -43,10 +44,18 @@ class OverlayWindow(QWidget):
         btn_close.clicked.connect(self.close_overlay)
 
     def set_overlay_layout(self):
-        guide_contents = content_layout(height=self.overlay_height)
+        slideshow = ImageSlideshow(width=self.overlay_width, height=self.overlay_height)
+        # 안내 가이드 UI, 현재 슬라이드가 대체함.
+        # guide_contents = content_layout(height=self.overlay_height)
+
         overlay_container = QWidget(self)
         overlay_container.setObjectName("overlayContainer")
-        overlay_container.setLayout(guide_contents)
+
+        layout = QVBoxLayout()
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.addWidget(slideshow)
+
+        overlay_container.setLayout(layout)
         overlay_container.setGeometry(0, 0, self.overlay_width, self.overlay_height)
 
         return overlay_container
