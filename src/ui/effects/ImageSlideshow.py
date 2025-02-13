@@ -1,63 +1,108 @@
 from PySide6.QtWidgets import (
     QWidget,
-    QVBoxLayout,
     QLabel,
     QStackedWidget,
     QGraphicsOpacityEffect,
+    QSizePolicy,
+    QVBoxLayout,
 )
 from PySide6.QtCore import Qt, QTimer, QPropertyAnimation
 from PySide6.QtGui import QPixmap
 
-DURATION_PLAY = 4250
-DURATION_FADEIN = 850
+DURATION_PLAY = 5500
+DURATION_FADEIN = 1250
 DURATION_FADEOUT = 500
 
 
 class ImageSlideshow(QWidget):
-    def __init__(self, width, height):
+    def __init__(
+        self, width, height, aspect_ratio_mode=Qt.KeepAspectRatio, text_size=48
+    ):
+        """
+        :param width: 슬라이드쇼 너비
+        :param height: 슬라이드쇼 높이
+        :param aspect_ratio_mode: 이미지 비율 조정 방식 (기본: Qt.KeepAspectRatio)
+        :param text_size: 텍스트 크기 (기본값: 24px)
+        """
         super().__init__()
 
         self.setFixedSize(width, height)
+        self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
 
-        # ✅ 여러 이미지를 담는 QStackedWidget
+        # ✅ 여러 이미지를 담는 QStackedWidget (텍스트를 이미지 위에 배치할 수 있도록 함)
         self.stack = QStackedWidget(self)
+        self.stack.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        self.stack.setContentsMargins(0, 0, 0, 0)
+        self.stack.setStyleSheet("border: none;")  # ✅ 보더 제거
 
-        # ✅ 이미지 추가
-        self.images = ["image1.jpg", "image2.jpg", "image3.jpg"]  # 이미지 경로
-        self.labels = []
-        self.effects = []  # ✅ 각 이미지의 투명도 효과 저장
-        for img in self.images:
-            label = QLabel()
-            label.setPixmap(QPixmap(img).scaled(width, height, Qt.KeepAspectRatio))
-            label.setAlignment(Qt.AlignCenter)
+        self.aspect_ratio_mode = aspect_ratio_mode  # ✅ 사용자 지정 비율 모드 저장
+        self.text_size = text_size  # ✅ 텍스트 크기 저장
+        self.images = [
+            ("image1.jpg", "오늘은, 내일의 추억입니다"),
+            ("image2.jpg", "영원한 정지 화면으로 간직합니다"),
+            ("image3.jpg", "나의 사진은 나의 지금이다"),
+            ("image4.jpg", "다비 스튜디오에서 특별한 기억을"),
+        ]
+        self.containers = []  # ✅ 이미지 + 텍스트 컨테이너 저장
+        self.effects = []
 
-            # ✅ 투명도 효과 추가
+        for img_path, text in self.images:
+            # ✅ 컨테이너 생성 (이미지 + 텍스트를 겹칠 컨테이너)
+            container = QWidget()
+            container.setFixedSize(width, height)
+            container.setStyleSheet(
+                "background-color: transparent;"
+            )  # ✅ 배경 투명 설정
+
+            # ✅ 이미지 라벨 (백그라운드)
+            img_label = QLabel(container)
+            img_label.setFixedSize(width, height)
+            pixmap = QPixmap(img_path)
+
+            # ✅ 사용자 지정 비율에 따라 크기 조정
+            scaled_pixmap = pixmap.scaled(
+                width, height, self.aspect_ratio_mode, Qt.SmoothTransformation
+            )
+            img_label.setPixmap(scaled_pixmap)
+            img_label.setAlignment(Qt.AlignCenter)
+
+            # ✅ 텍스트 라벨 (이미지 위에 올리기)
+            text_label = QLabel(text, container)
+            text_label.setStyleSheet(
+                f"""
+                color: white; 
+                font-size: {self.text_size}px; 
+                font-weight: bold;
+                background-color: transparent;
+            """
+            )
+            text_label.setFixedSize(width, height)
+            text_label.setAlignment(Qt.AlignCenter)  # ✅ 텍스트를 가로, 세로 중앙 정렬
+
+            # ✅ 투명도 효과 추가 (애니메이션 적용 가능)
             effect = QGraphicsOpacityEffect()
-            label.setGraphicsEffect(effect)
-            effect.setOpacity(0.0)  # 초기 투명도를 0으로 설정
+            container.setGraphicsEffect(effect)
+            effect.setOpacity(0.0)
             self.effects.append(effect)
 
-            self.stack.addWidget(label)
-            self.labels.append(label)
+            self.stack.addWidget(container)
+            self.containers.append(container)
 
-        # ✅ 처음 이미지만 보이도록 설정
         self.effects[0].setOpacity(1.0)
         self.stack.setCurrentIndex(0)
 
-        # ✅ 전체 레이아웃
+        # ✅ 올바른 레이아웃 설정 (QVBoxLayout을 사용하여 QStackedWidget 추가)
         layout = QVBoxLayout()
         layout.setContentsMargins(0, 0, 0, 0)
-        layout.addWidget(self.stack)
-        self.setLayout(layout)
+        layout.addWidget(self.stack)  # ✅ QStackedWidget을 추가
+        self.setLayout(layout)  # ✅ 오류 발생하지 않도록 setLayout에 QVBoxLayout 전달
 
-        # ✅ 애니메이션 설정
         self.fade_out = QPropertyAnimation(self.effects[0], b"opacity")
         self.fade_out.setDuration(DURATION_FADEOUT)
 
         self.fade_in = QPropertyAnimation(self.effects[0], b"opacity")
         self.fade_in.setDuration(DURATION_FADEIN)
 
-        # ✅ 타이머 설정 (3초마다 이미지 변경)
         self.timer = QTimer()
         self.timer.timeout.connect(self.next_image)
         self.timer.start(DURATION_PLAY)
@@ -65,24 +110,19 @@ class ImageSlideshow(QWidget):
         self.current_index = 0
 
     def next_image(self):
-        """다음 이미지로 변경하는 애니메이션"""
         old_index = self.current_index
-        self.current_index = (self.current_index + 1) % len(self.labels)
+        self.current_index = (self.current_index + 1) % len(self.containers)
 
-        # ✅ 기존 이미지 페이드아웃 설정
         self.fade_out.setTargetObject(self.effects[old_index])
         self.fade_out.setStartValue(1.0)
         self.fade_out.setEndValue(0.0)
-
-        # ✅ 새 이미지 페이드인 설정 (애니메이션 완료 후 실행)
-        self.fade_out.finished.connect(
-            self.switch_image
-        )  # ✅ 애니메이션이 끝나면 switch_image 실행
+        self.fade_out.finished.connect(lambda: self.complete_switch(old_index))
         self.fade_out.start()
 
-    def switch_image(self):
-        """이미지 변경 후 페이드인 실행"""
-        self.stack.setCurrentIndex(self.current_index)  # ✅ 새 이미지로 변경
+    def complete_switch(self, old_index):
+        """✅ 페이드아웃이 끝난 후에만 이미지 변경"""
+        self.stack.setCurrentIndex(self.current_index)
+        self.effects[old_index].setOpacity(1.0)
 
         self.fade_in.setTargetObject(self.effects[self.current_index])
         self.fade_in.setStartValue(0.0)

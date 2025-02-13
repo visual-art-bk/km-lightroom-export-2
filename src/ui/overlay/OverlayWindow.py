@@ -1,7 +1,4 @@
-from PySide6.QtWidgets import (
-    QWidget,
-    QVBoxLayout,
-)
+from PySide6.QtWidgets import QWidget, QVBoxLayout, QSizePolicy
 from PySide6.QtCore import Qt, Signal
 from ui.buttons.close_btn import close_btn
 from ui.content_layout.content_layout import content_layout
@@ -14,24 +11,13 @@ class OverlayWindow(QWidget):
     def __init__(self):
         super().__init__(None)  # 부모 없음 (독립 창)
 
-        self.overlay_width = 400
-        self.overlay_height = 200
+        self.overlay_width = 1050
+        self.overlay_height = 250
         self.init_position()  # 창 위치 초기화
 
-        # 크기 고정 및 스타일 적용
-        self.setFixedSize(self.overlay_width, self.overlay_height)
-        self.setWindowFlags(Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint | Qt.Tool)
-        self.setObjectName("overlayContainer")  # CSS 적용을 위한 ID 설정
-        self.setStyleSheet(
-            """
-            QWidget#overlayContainer {
-                background-color: rgba(255, 200, 243, 1);
-            }
-            QPushButton {
-                border: none;
-            }
-        """
-        )
+        # ✅ 배경 투명 설정
+        self.setAttribute(Qt.WA_TranslucentBackground)
+        self.setWindowFlags(Qt.FramelessWindowHint | Qt.Tool | Qt.WindowStaysOnTopHint)
 
         self.setup_layout()
 
@@ -44,7 +30,14 @@ class OverlayWindow(QWidget):
         btn_close.clicked.connect(self.close_overlay)
 
     def set_overlay_layout(self):
-        slideshow = ImageSlideshow(width=self.overlay_width, height=self.overlay_height)
+        slideshow = ImageSlideshow(
+            width=self.overlay_width,
+            height=self.overlay_height,
+            aspect_ratio_mode=Qt.KeepAspectRatioByExpanding,
+        )
+        slideshow.setSizePolicy(
+            QSizePolicy.Expanding, QSizePolicy.Expanding
+        )  # ✅ 크기 자동 조정
         # 안내 가이드 UI, 현재 슬라이드가 대체함.
         # guide_contents = content_layout(height=self.overlay_height)
 
