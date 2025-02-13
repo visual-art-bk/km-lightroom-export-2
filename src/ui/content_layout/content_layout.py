@@ -2,8 +2,8 @@ from PySide6.QtWidgets import (
     QGridLayout,
 )
 from PySide6.QtCore import Qt
-from ui.overlay.TextContainerWidget import TextContainerWidget
-from ui.overlay.text_contents import text_contents
+from ui.content_layout.TextContainerWidget import TextContainerWidget
+from ui.content_layout.text_contents import text_contents
 
 
 def content_layout(height):

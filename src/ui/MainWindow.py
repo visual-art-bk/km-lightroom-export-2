@@ -1,4 +1,3 @@
-import sys
 from PySide6.QtWidgets import (
     QMainWindow,
     QLabel,
@@ -14,7 +13,7 @@ from lightroom import LightroomAutomationThread
 from ui.msg_box import create_error_msg, create_done_msg
 from lightroom.LightroomLaunchThread import LightroomLaunchThread
 from helpers.log_exception_to_file import log_exception_to_file
-from ui.overlay.NewOverlayWindow import NewOverlayWindow
+from ui.overlay.OverlayWindow import OverlayWindow
 
 
 class MainWindow(QMainWindow):
@@ -226,5 +225,5 @@ class MainWindow(QMainWindow):
             print("이미 오버레이가 생성 중입니다.")
             return
 
-        self.overlay_window = NewOverlayWindow()  #  독립적인 오버레이 생성
+        self.overlay_window = OverlayWindow()  #  독립적인 오버레이 생성
         self.overlay_window.show()

@@ -1,96 +1,77 @@
-from PySide6.QtWidgets import QWidget, QPushButton
+from PySide6.QtWidgets import (
+    QWidget,
+    QVBoxLayout,
+)
 from PySide6.QtCore import Qt, Signal
-from ui.overlay.TextContainerWidget import TextContainerWidget
-from ui.overlay.text_contents import text_contents
 from ui.buttons.close_btn import close_btn
-from ui.utils.apply_bg_wideg_style import apply_bg_wideg_style
+from ui.content_layout.content_layout import content_layout
 
 
 class OverlayWindow(QWidget):
-    _instance = None
     overlay_closed = Signal()
 
-    def __init__(
-        self,
-        width=500,
-        height=250,
-        bg_color="#0000FF",  # ✅ 기본값 파란색 배경
-        text_color="yellow",  # ✅ 기본값 노란색 텍스트
-        font_size=30,
-        animation_speed=20,
-        y_offset=100,  # ✅ Y축 위치 조정 가능
-        opacity=0.5,  # ✅ 투명도 추가 (0.0 ~ 1.0)
-        blur_radius=10,  # ✅ 블러 강도 추가 (0 이상)
-    ):
-        super().__init__()
+    def __init__(self):
+        super().__init__(None)  # 부모 없음 (독립 창)
 
-        self.width = width
-        self.height = height
-        self.y_offset = y_offset  # Y축 위치 저장
-        self.bg_color = bg_color  # ✅ 배경색 저장
-        self.opacity = opacity  # ✅ 투명도 저장
-        self.animation_speed = animation_speed
-        self.blur_radius = blur_radius  # ✅ 블러 강도 저장
+        self.overlay_width = 400
+        self.overlay_height = 200
+        self.init_position()  # 창 위치 초기화
 
-        self.setWindowTitle("오버레이 창")
-        self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint)
-
-        # ✅ 부모 `OverlayWindow`를 완전히 투명하게 설정
-        self.setAttribute(Qt.WA_TranslucentBackground)
-
-        # ✅ 배경 위젯 추가 (부모 위젯이 아니라 별도 위젯으로 투명도 적용)
-        self.bg_widget = QWidget(self)
-        self.bg_widget.setGeometry(0, 0, self.width, self.height)
-        bg_style = apply_bg_wideg_style(bg_color=self.bg_color, opacity=self.opacity)
-        self.bg_widget.setStyleSheet(bg_style)
-
-        # ✅ 닫기 버튼 추가 (오버레이 종료용)
-        self.close_button = QPushButton("✖", self)
-        self.close_button.setGeometry(self.width - 35, 10, 25, 25)
-        self.close_button.setStyleSheet(
-            "background: none; border: none; color: white; font-size: 18px; font-weight: bold;"
+        # 크기 고정 및 스타일 적용
+        self.setFixedSize(self.overlay_width, self.overlay_height)
+        self.setWindowFlags(Qt.WindowStaysOnTopHint | Qt.FramelessWindowHint | Qt.Tool)
+        self.setObjectName("overlayContainer")  # CSS 적용을 위한 ID 설정
+        self.setStyleSheet(
+            """
+            QWidget#overlayContainer {
+                background-color: rgba(255, 200, 243, 1);
+            }
+            QPushButton {
+                border: none;
+            }
+        """
         )
-        self.close_button.clicked.connect(self.handle_close)
 
-        # ✅ 텍스트 컨테이너 추가
-        self.text_container = TextContainerWidget(
-            text_contents=text_contents,
-            font_sizes=font_size,
-            text_color=text_color,
-            height=self.height,
-        )
-        self.text_container.setParent(self)
-        self.text_container.setGeometry(0, 0, self.width, self.height)
+        self.setup_layout()
 
-        # 창 중앙 정렬
-        self.center_window()
+    def set_btn_close(self, overlay_container):
+        if overlay_container == None:
+            raise ValueError("overlay_container가 초기화되지 않았음")
+        btn_close = close_btn()
+        btn_close.setParent(overlay_container)
+        btn_close.move(self.overlay_width - 40, 10)
+        btn_close.clicked.connect(self.close_overlay)
 
-    def handle_close(self):
-        print("닫기 버튼 클릭됨!")
+    def set_overlay_layout(self):
+        guide_contents = content_layout(height=self.overlay_height)
+        overlay_container = QWidget(self)
+        overlay_container.setObjectName("overlayContainer")
+        overlay_container.setLayout(guide_contents)
+        overlay_container.setGeometry(0, 0, self.overlay_width, self.overlay_height)
 
-    def center_window(self):
-        """창을 화면 좌우 정가운데 위치시키고, 위아래(Y축)는 사용자 지정"""
+        return overlay_container
+
+    def close_overlay(self):
+        """✅ 오버레이 닫고 부모 윈도우에 신호 전달"""
+        self.overlay_closed.emit()
+        self.close()
+
+    def init_position(self):
+        """✅ 창을 화면 좌우 정중앙에 위치"""
         screen_geometry = self.screen().availableGeometry()
         screen_width = screen_geometry.width()
-        screen_height = screen_geometry.height()
+        x_pos = (screen_width - self.overlay_width) // 2
+        y_pos = 18  # 고정된 Y축 위치
+        self.setGeometry(x_pos, y_pos, self.overlay_width, self.overlay_height)
 
-        x_pos = (screen_width - self.width) // 2  # 좌우 정중앙
-        y_pos = min(
-            max(self.y_offset, 0), screen_height - self.height
-        )  # Y축 커스텀 가능
+    def setup_layout(self):
+        """전체 UI 레이아웃 설정"""
+        overlay_container = self.set_overlay_layout()
 
-        self.setGeometry(x_pos, y_pos, self.width, self.height)
+        self.set_btn_close(overlay_container)  # Absolute postin 효과를 위해 나중에 추가
 
-    @classmethod
-    def create_overlay(cls, **kwargs):
-        """싱글턴 방식으로 오버레이 창을 생성"""
-        if cls._instance is None:
-            cls._instance = OverlayWindow(**kwargs)
-        return cls._instance
+        main_layout = QVBoxLayout()
+        main_layout.setContentsMargins(0, 0, 0, 0)
+        main_layout.addWidget(overlay_container)
 
-    @classmethod
-    def close_overlay(cls):
-        """오버레이 창을 닫는 메서드"""
-        if cls._instance:
-            cls._instance.close()
-            cls._instance = None
+        self.setLayout(main_layout)
