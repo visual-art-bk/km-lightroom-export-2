@@ -1,6 +1,4 @@
-import time
-import ctypes
-import pyautogui
+
 from pywinauto import WindowSpecification, keyboard
 from lightroom.exports.selects.open_export_window import open_export_window
 from lightroom.utils.select_ui import select_ui
@@ -18,31 +16,14 @@ from lightroom.exports.content_credentials_opt.collapse_credentials_opt import (
 KEYS_SELECT_ALL = "^a"
 KEYS_SELECT_EXPORT = "^+E"
 CONTROL_TYPE_FILE_MENU = "MenuItem"
-CONTROL_TYPE_CHECKBOX = "CheckBox"
-CONTROL_TYPE_EXPORT_PATH = "Button"
 TITLE_FILE_MENU = "파일(F)"
-TITLE_SUB_FOLDER = "하위 폴더에 넣기:"
-TITLE_EXPORT_PATH = "열기"
-TEXT_DESKTOP = "특정 폴더"
 
 
-def lock_input():
-    """✅ 마우스와 키보드 입력을 잠급니다 (Windows 전용)"""
-    ctypes.windll.user32.BlockInput(True)  # 🔒 입력 차단
-    pyautogui.FAILSAFE = False  # ⛔ 마우스 모서리 이동 방지
 
 
-def unlock_input():
-    """✅ 마우스와 키보드 입력을 다시 활성화합니다"""
-    ctypes.windll.user32.BlockInput(False)  # 🔓 입력 해제
-
-
-def run_exports(lightroom: WindowSpecification, lock_user_input):
+def run_exports(lightroom: WindowSpecification):
     state_manager = StateManager()
     app_state = state_manager.get_state()
-
-    if lock_user_input == True:
-        lock_input()
 
     # 전체 사진 단축키로 선택
     send_shortcuts(
@@ -100,6 +81,3 @@ def run_exports(lightroom: WindowSpecification, lock_user_input):
     is_identi_name_active = use_identified_name_save.exists()
     if is_identi_name_active == True:
         use_identified_name_save.click()
-
-    if lock_user_input == True:
-        lock_input()

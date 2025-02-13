@@ -161,10 +161,9 @@ class MainWindow(QMainWindow):
         if self.overlay_window is not None and finished == True:
             self.close_overlay()
 
-            self.show()
-
             msg_box = create_done_msg(parent=self)
             msg_box.exec()
+            self.close()
 
     def on_lightroom_automation_failed(self, failed_automation):
         if failed_automation == False:
