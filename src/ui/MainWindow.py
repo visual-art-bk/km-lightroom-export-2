@@ -1,3 +1,6 @@
+import time
+import os
+from PySide6.QtWidgets import QMessageBox
 import threading
 from PySide6.QtWidgets import (
     QMainWindow,
@@ -140,13 +143,46 @@ class MainWindow(QMainWindow):
                 context="사용자정보 올바르게 입력함",
             )
 
+            
             self.thread_lightroom_launcher.start()
+
+
 
         except Exception as e:
             self.show_err_msg()
             log_exception_to_file(
                 exception_obj=e, message="메인 프로그램 실행 중 예외발생"
             )
+
+    def show_prelaunch_message(self):
+        """루트 디렉토리의 메모장 파일에서 메시지를 읽어 사용자에게 확인 요청하고 응답을 반환"""
+
+        file_path = "준비메세지.txt"  # 루트 디렉토리에 있는 파일
+
+        try:
+            # 파일에서 메시지 읽기
+            if os.path.exists(file_path):
+                with open(file_path, "r", encoding="utf-8") as file:
+                    message_text = file.read().strip()
+            else:
+                message_text = "⚠️ 중요 안내: 계속 진행하시겠습니까?"
+
+            # 메시지 박스 생성 및 표시
+            msg_box = QMessageBox(self)
+            msg_box.setIcon(QMessageBox.Icon.Information)
+            msg_box.setWindowTitle("확인 필요")
+            msg_box.setText(message_text)
+            msg_box.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+
+            # 사용자의 선택을 반환
+            return msg_box.exec() == QMessageBox.Ok
+
+        except Exception as e:
+            self.show_err_msg()
+            log_exception_to_file(
+                exception_obj=e, message="메모장 파일을 읽는 중 오류 발생"
+            )
+            return False  # 오류 발생 시 진행을 막음
 
     def show_err_msg(self):
         error_msg_box = create_error_msg(parent=self)
@@ -181,12 +217,13 @@ class MainWindow(QMainWindow):
         if self.overlay_window is not None and finished == True:
             self.close_overlay()
 
-            msg_box = create_done_msg(parent=self)
-            msg_box.exec()
-            self.cleanup_resources()
-            self.check_running_threads()
+            # msg_box = create_done_msg(parent=self)
+            if self.show_prelaunch_message():
+                time.sleep(1)
+                self.cleanup_resources()
+                self.check_running_threads()
 
-            self.close()  # 메인 윈도우 종료 요청
+                self.close()  # 메인 윈도우 종료 요청
 
     def on_lightroom_automation_failed(self, failed_automation):
         if failed_automation == False:
