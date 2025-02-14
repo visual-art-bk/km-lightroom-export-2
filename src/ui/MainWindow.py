@@ -1,3 +1,4 @@
+import threading
 from PySide6.QtWidgets import (
     QMainWindow,
     QLabel,
@@ -147,6 +148,25 @@ class MainWindow(QMainWindow):
                 exception_obj=e, message="메인 프로그램 실행 중 예외발생"
             )
 
+    def show_err_msg(self):
+        error_msg_box = create_error_msg(parent=self)
+        error_msg_box.exec()
+
+    def get_user_infos(self):
+        return {
+            "username": self.username_entry.text().strip(),
+            "phone_number": self.phone_number_entry.text().strip(),
+        }
+
+    def create_overlay(self):
+        """독립적인 오버레이 창을 생성하고 부모 윈도우와 시그널 연결"""
+        if self.overlay_window is not None:
+            print("이미 오버레이가 생성 중입니다.")
+            return
+
+        self.overlay_window = OverlayWindow()  #  독립적인 오버레이 생성
+        self.overlay_window.show()
+
     def on_lightroom_launcher(self, lightroom_started):
         if lightroom_started == True:
             print("Main - 라이트룸 활성화 완료")
@@ -163,7 +183,10 @@ class MainWindow(QMainWindow):
 
             msg_box = create_done_msg(parent=self)
             msg_box.exec()
-            self.close()
+            self.cleanup_resources()
+            self.check_running_threads()
+
+            self.close()  # 메인 윈도우 종료 요청
 
     def on_lightroom_automation_failed(self, failed_automation):
         if failed_automation == False:
@@ -171,6 +194,11 @@ class MainWindow(QMainWindow):
         self.close_overlay()
         self.show()
         self.show_err_msg()
+
+        self.cleanup_resources()
+        self.check_running_threads()
+
+        self.close()  # 메인 윈도우 종료 요청
 
     def on_state_global_change(self, new_state: AppState):
         print(
@@ -187,42 +215,52 @@ class MainWindow(QMainWindow):
         msg_box.setStandardButtons(QMessageBox.Ok)  # 확인 버튼 추가
         msg_box.exec()  # 메시지 박스 실행
 
-    def show_err_msg(self):
-        error_msg_box = create_error_msg(parent=self)
-        error_msg_box.exec()
-
-    def get_user_infos(self):
-        return {
-            "username": self.username_entry.text().strip(),
-            "phone_number": self.phone_number_entry.text().strip(),
-        }
-
     def closeEvent(self, event):
         """메인 윈도우가 닫힐 때 모든 리소스 정리"""
         print(" 프로그램 종료: 모든 리소스 정리 중...")
 
-        #  실행 중인 스레드 안전하게 종료
+        self.cleanup_resources()
+        self.check_running_threads()
+
+        print(" 모든 리소스 정리 완료. 프로그램 종료.")
+        event.accept()  #  정상적으로 창을 닫음
+
+    def cleanup_resources(self):
+        """실행 중인 스레드와 오버레이 창을 안전하게 종료 및 정리"""
         if self.thread_lightroom_automation:
             print(" Lightroom 자동화 스레드 종료 중...")
             self.thread_lightroom_automation.quit()
             self.thread_lightroom_automation.wait()
+
+            if not self.thread_lightroom_automation.wait(5000):
+                print("⚠️ 경고: 스레드가 정상적으로 종료되지 않음. 강제 종료 시도.")
+                self.thread_lightroom_automation.terminate()
+                self.thread_lightroom_automation.wait(2000)
+
             self.thread_lightroom_automation = None
 
-        # 오버레이 창 닫기
         if self.overlay_window:
             print(" 오버레이 창 닫기...")
             self.overlay_window.close()
             self.overlay_window.deleteLater()
             self.overlay_window = None
 
-        print(" 모든 리소스 정리 완료. 프로그램 종료.")
-        event.accept()  #  정상적으로 창을 닫음
+    def check_running_threads(self):
+        """✅ 현재 실행 중인 모든 스레드를 출력 및 강제 종료"""
+        running_threads = threading.enumerate()
+        
+        if len(running_threads) > 1:  # 메인 스레드를 제외한 다른 스레드가 남아 있으면 경고
+            print("⚠️ 종료되지 않은 스레드 감지:")
+            for thread in running_threads:
+                if thread is not threading.main_thread():
+                    print(f"  - {thread.name} (ID: {thread.ident})")
 
-    def create_overlay(self):
-        """독립적인 오버레이 창을 생성하고 부모 윈도우와 시그널 연결"""
-        if self.overlay_window is not None:
-            print("이미 오버레이가 생성 중입니다.")
-            return
-
-        self.overlay_window = OverlayWindow()  #  독립적인 오버레이 생성
-        self.overlay_window.show()
+                    # ❌ DummyThread는 join()을 호출할 수 없음
+                    if isinstance(thread, threading._DummyThread):
+                        print(f"🚨 {thread.name} (ID: {thread.ident}) 는 DummyThread이므로 join()을 호출하지 않음.")
+                        continue
+                    
+                    # ✅ 정상적인 스레드만 join() 실행
+                    thread.join(timeout=3)  # 최대 3초 대기 후 종료 요청
+        else:
+            print("✅ 모든 스레드가 정상적으로 종료됨.")

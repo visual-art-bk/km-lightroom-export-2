@@ -46,4 +46,6 @@ class TaskManagerDetector:
         """✅ 키 리스너 중지"""
         print("🛑 Ctrl + Alt + Delete 감지 스레드 종료")
         self.running = False
-        self.listener.stop()
+        if self.listener:
+            self.listener.stop()
+            self.listener.join()  # ✅ 스레드가 완전히 종료될 때까지 대기

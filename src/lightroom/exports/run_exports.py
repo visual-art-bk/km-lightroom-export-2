@@ -1,4 +1,3 @@
-
 from pywinauto import WindowSpecification, keyboard
 from lightroom.exports.selects.open_export_window import open_export_window
 from lightroom.utils.select_ui import select_ui
@@ -19,11 +18,12 @@ CONTROL_TYPE_FILE_MENU = "MenuItem"
 TITLE_FILE_MENU = "파일(F)"
 
 
-
-
-def run_exports(lightroom: WindowSpecification):
+def run_exports(lightroom: WindowSpecification, check_stop_flag):
     state_manager = StateManager()
     app_state = state_manager.get_state()
+
+    if check_stop_flag("내보내기 시작 전 작업관리자 실행으로 자동화 중단"):
+        return False
 
     # 전체 사진 단축키로 선택
     send_shortcuts(
@@ -49,27 +49,50 @@ def run_exports(lightroom: WindowSpecification):
     # 내보내기 단축키로 활성화
     export_window = open_export_window(lightroom=lightroom)
 
-    export_location(export_window=export_window, app_state=app_state)
+    if check_stop_flag("[내보내기 위치] 자동화 전 작업관리자 실행으로 자동화 중단"):
+        return False
+    else:
+        export_location(export_window=export_window, app_state=app_state)
 
-    specs_filename(export_window=export_window)
+    if check_stop_flag(
+        "[파일이름 지정하기기] 자동화화 전 작업관리자 실행으로 자동화 중단"
+    ):
+        return False
+    else:
+        specs_filename(export_window=export_window)
 
-    # 내보내기에 필요한 메뉴 아니지만,
-    # 자동화 시야를 가리기 때문에 메뉴 닫음.
-    collapse_video_opt(export_window=export_window)
+    if check_stop_flag("[비디오] 자동화 전 작업관리자 실행으로 자동화 중단"):
+        return False
+    else:
+        # 내보내기에 필요한 메뉴 아니지만,
+        # 자동화 시야를 가리기 때문에 메뉴 닫음.
+        collapse_video_opt(export_window=export_window)
 
-    set_file(export_window=export_window)
+    if check_stop_flag("[파일 설정] 자동화 전 작업관리자 실행으로 자동화 중단"):
+        return False
+    else:
+        set_file(export_window=export_window)
 
-    # 내보내기에 필요한 메뉴 아니지만,
-    # 자동화 시야를 가리기 때문에 메뉴 닫음.
-    collapse_credentials_opt(export_window=export_window)
+    if check_stop_flag("[collapse_credentials] 자동화 전 작업관리자 실행으로 자동화 중단"):
+        return False
+    else: 
+        # 내보내기에 필요한 메뉴 아니지만,
+        # 자동화 시야를 가리기 때문에 메뉴 닫음.
+        collapse_credentials_opt(export_window=export_window)
 
-    img_size_adjust(export_window=export_window)
+    if check_stop_flag("[이미지 크기 조정] 자동화 전 작업관리자 실행으로 자동화 중단"):
+        return False
+    else:
+        img_size_adjust(export_window=export_window)
 
-    export_button = export_window.child_window(
-        title="내보내기", auto_id="1", control_type="Button"
-    )
+    if check_stop_flag("[내보내기 버튼 클릭] 자동화 전 작업관리자 실행으로 자동화 중단"):
+        return False
+    else:
+        export_button = export_window.child_window(
+            title="내보내기", auto_id="1", control_type="Button"
+        )
 
-    export_button.click_input()
+        export_button.click_input()
 
     use_identified_name_save = select_ui(
         win_specs=lightroom,
