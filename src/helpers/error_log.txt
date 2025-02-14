@@ -7405,3 +7405,33 @@ pywinauto.timings.TimeoutError: timed out
 
 ============================================================
 
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-14 20:30:14
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-14 20:31:49
+============================================================
+Lightroom 자동화 실패: timed out
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\CafeAlle\Pictures\code\exp-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 71, in run
+    lightroom.wait("exists enabled visible ready", timeout=10)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\CafeAlle\Pictures\code\exp-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\application.py", line 529, in wait
+    wait_until(timeout, retry_interval,
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+               lambda: self.__check_all_conditions(check_method_names, retry_interval))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\CafeAlle\Pictures\code\exp-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\timings.py", line 375, in wait_until
+    raise err
+pywinauto.timings.TimeoutError: timed out
+
+============================================================
+

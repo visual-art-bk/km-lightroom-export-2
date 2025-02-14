@@ -10,11 +10,15 @@ from PySide6.QtWidgets import (
     QMessageBox,
     QVBoxLayout,
     QWidget,
+    QHBoxLayout,
+    QGraphicsDropShadowEffect,
 )
 from PySide6.QtCore import Qt
+from PySide6.QtGui import QIcon, QColor
+
 from state_manager import StateManager, AppState
 from lightroom import LightroomAutomationThread
-from ui.msg_box import create_error_msg, create_done_msg
+from ui.msg_box import create_error_msg
 from lightroom.LightroomLaunchThread import LightroomLaunchThread
 from helpers.log_exception_to_file import log_exception_to_file
 from ui.overlay.OverlayWindow import OverlayWindow
@@ -32,7 +36,10 @@ class MainWindow(QMainWindow):
         self.lock_user_input = lock_user_input
 
         self.init_state_manager()
-        self.setWindowTitle("다비 내보내기 베타 V.1.3")
+        self.setWindowTitle("다비 내보내기 매니저")
+
+        self.setWindowIcon(QIcon("assets/다비스튜디오_logo11_black_ico.ico"))
+        self.setObjectName("MainWindow")
 
         self.init_window_position(
             height=height,
@@ -44,23 +51,81 @@ class MainWindow(QMainWindow):
         self.thread_lightroom_automation = None
         self.thread_lightroom_launcher = None
 
+        self.setStyleSheet(
+            """
+            #MainWindow {
+                background-color: #FFE9D6;
+            }
+        """
+        )
+
     def init_window_layout(self):
         layout = QVBoxLayout()
 
-        self.label_username = QLabel("예약자 이름")
+        line_edit_style = """
+    QLineEdit { color: black; font-size: 14px; }
+    QLineEdit::placeholder { color: gray; font-style: italic; }
+"""
+
+        self.label_username = QLabel("예약자 성함")
         layout.addWidget(self.label_username)
 
         self.username_entry = QLineEdit()
+        self.username_entry.setPlaceholderText("“여기에 입력하세요.”")
+        self.username_entry.setStyleSheet(line_edit_style)
         layout.addWidget(self.username_entry)
 
         self.label_phone_number = QLabel("전화번호 뒷자리 4자리")
         layout.addWidget(self.label_phone_number)
 
         self.phone_number_entry = QLineEdit()
+        self.phone_number_entry.setPlaceholderText("“여기에 입력하세요.”")
+        self.phone_number_entry.setStyleSheet(line_edit_style)
         layout.addWidget(self.phone_number_entry)
 
-        self.run_button = QPushButton("📁 내보내기 시작")
+        self.run_button = QPushButton()
+        self.run_button.setStyleSheet(
+            """
+            QPushButton {
+                border-radius: 8px;
+                padding: 8px 12px;
+                font-size: 14px;
+                background-color: white; /* 버튼 배경 흰색 */
+                border: 1px solid #CCC; /* 경계선 추가 */
+            }
+            QPushButton:hover {
+                background-color: #F0F0F0;
+            }
+        """
+        )
+
+        # ✅ 버튼에 그림자 효과 추가
+        shadow = QGraphicsDropShadowEffect()
+        shadow.setBlurRadius(10)  # ✅ 그림자 흐림 정도
+        shadow.setXOffset(3)  # ✅ X축 그림자 위치
+        shadow.setYOffset(3)  # ✅ Y축 그림자 위치
+        shadow.setColor(QColor(0, 0, 0, 80))  # ✅ 그림자 색상 (반투명 검은색)
+
+        self.run_button.setGraphicsEffect(shadow)
+
+        # ✅ QLabel을 버튼 내부에 추가 (폰트 크기 조절)
+        button_label = QLabel(
+            '<span style="color: red; font-weight: bold; font-size: 16px;">내보내기</span> 시작'
+        )
+        button_label.setStyleSheet(
+            "color: black; font-size: 16px;"
+        )  # "시작"은 일반 크기
+        button_label.setAlignment(Qt.AlignCenter)  # ✅ 텍스트 가운데 정렬
+
+        # ✅ QPushButton 내부에 QLabel을 배치하여 정렬
+        button_layout = QHBoxLayout(self.run_button)
+        button_layout.addWidget(button_label)
+        button_layout.setAlignment(Qt.AlignCenter)  # ✅ 레이아웃 자체도 가운데 정렬
+        button_layout.setContentsMargins(10, 5, 10, 5)  # ✅ 적절한 여백 설정
+
+        # ✅ 버튼 클릭 이벤트 정상 동작
         self.run_button.clicked.connect(self.run_main_window)
+
         layout.addWidget(self.run_button)
 
         container = QWidget()
@@ -143,10 +208,7 @@ class MainWindow(QMainWindow):
                 context="사용자정보 올바르게 입력함",
             )
 
-            
             self.thread_lightroom_launcher.start()
-
-
 
         except Exception as e:
             self.show_err_msg()
@@ -172,7 +234,7 @@ class MainWindow(QMainWindow):
             msg_box.setIcon(QMessageBox.Icon.Information)
             msg_box.setWindowTitle("확인 필요")
             msg_box.setText(message_text)
-            msg_box.setStandardButtons(QMessageBox.Ok | QMessageBox.Cancel)
+            msg_box.setStandardButtons(QMessageBox.Ok)
 
             # 사용자의 선택을 반환
             return msg_box.exec() == QMessageBox.Ok
