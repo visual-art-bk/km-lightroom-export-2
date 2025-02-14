@@ -157,7 +157,7 @@ class MainWindow(QMainWindow):
     def show_prelaunch_message(self):
         """루트 디렉토리의 메모장 파일에서 메시지를 읽어 사용자에게 확인 요청하고 응답을 반환"""
 
-        file_path = "준비메세지.txt"  # 루트 디렉토리에 있는 파일
+        file_path = "안내메세지.txt"  # 루트 디렉토리에 있는 파일
 
         try:
             # 파일에서 메시지 읽기
@@ -217,12 +217,8 @@ class MainWindow(QMainWindow):
         if self.overlay_window is not None and finished == True:
             self.close_overlay()
 
-            # msg_box = create_done_msg(parent=self)
             if self.show_prelaunch_message():
-                time.sleep(1)
                 self.cleanup_resources()
-                self.check_running_threads()
-
                 self.close()  # 메인 윈도우 종료 요청
 
     def on_lightroom_automation_failed(self, failed_automation):
@@ -233,7 +229,6 @@ class MainWindow(QMainWindow):
         self.show_err_msg()
 
         self.cleanup_resources()
-        self.check_running_threads()
 
         self.close()  # 메인 윈도우 종료 요청
 
@@ -257,7 +252,6 @@ class MainWindow(QMainWindow):
         print(" 프로그램 종료: 모든 리소스 정리 중...")
 
         self.cleanup_resources()
-        self.check_running_threads()
 
         print(" 모든 리소스 정리 완료. 프로그램 종료.")
         event.accept()  #  정상적으로 창을 닫음
@@ -266,14 +260,12 @@ class MainWindow(QMainWindow):
         """실행 중인 스레드와 오버레이 창을 안전하게 종료 및 정리"""
         if self.thread_lightroom_automation:
             print(" Lightroom 자동화 스레드 종료 중...")
+
+            # ✅ 스레드 종료 요청
             self.thread_lightroom_automation.quit()
-            self.thread_lightroom_automation.wait()
 
-            if not self.thread_lightroom_automation.wait(5000):
-                print("⚠️ 경고: 스레드가 정상적으로 종료되지 않음. 강제 종료 시도.")
-                self.thread_lightroom_automation.terminate()
-                self.thread_lightroom_automation.wait(2000)
-
+            # ✅ Qt가 자동으로 정리할 수 있도록 deleteLater() 호출
+            self.thread_lightroom_automation.deleteLater()
             self.thread_lightroom_automation = None
 
         if self.overlay_window:
@@ -281,23 +273,3 @@ class MainWindow(QMainWindow):
             self.overlay_window.close()
             self.overlay_window.deleteLater()
             self.overlay_window = None
-
-    def check_running_threads(self):
-        """✅ 현재 실행 중인 모든 스레드를 출력 및 강제 종료"""
-        running_threads = threading.enumerate()
-        
-        if len(running_threads) > 1:  # 메인 스레드를 제외한 다른 스레드가 남아 있으면 경고
-            print("⚠️ 종료되지 않은 스레드 감지:")
-            for thread in running_threads:
-                if thread is not threading.main_thread():
-                    print(f"  - {thread.name} (ID: {thread.ident})")
-
-                    # ❌ DummyThread는 join()을 호출할 수 없음
-                    if isinstance(thread, threading._DummyThread):
-                        print(f"🚨 {thread.name} (ID: {thread.ident}) 는 DummyThread이므로 join()을 호출하지 않음.")
-                        continue
-                    
-                    # ✅ 정상적인 스레드만 join() 실행
-                    thread.join(timeout=3)  # 최대 3초 대기 후 종료 요청
-        else:
-            print("✅ 모든 스레드가 정상적으로 종료됨.")
