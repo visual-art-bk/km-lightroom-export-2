@@ -1,4 +1,4 @@
-from constants import MAIN_WINDOW_BG_COLOR, BTN_RUN_MAIN_HOVER
+from constants import BTN_RUN_MAIN_BG_COLOR, BTN_RUN_MAIN_HOVER_COLOR
 from PySide6.QtWidgets import (
     QLabel,
     QPushButton,
@@ -15,11 +15,11 @@ def btn_run_main():
             border-radius: 8px;
             padding: 8px 12px;
             font-size: 14px;
-            background-color: {MAIN_WINDOW_BG_COLOR}; /* 버튼 배경 */
+            background-color: {BTN_RUN_MAIN_BG_COLOR}; /* 버튼 배경 */
             border: 1px solid gray; /* 경계선 */
         }}
         QPushButton:hover {{
-            background-color: {BTN_RUN_MAIN_HOVER}; /* 호버 효과 */
+            background-color: {BTN_RUN_MAIN_HOVER_COLOR}; /* 호버 효과 */
         }}
     """
     run_button = QPushButton()
