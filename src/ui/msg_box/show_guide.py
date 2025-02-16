@@ -1,6 +1,5 @@
 import os
 from PySide6.QtWidgets import QMessageBox
-from PySide6.QtWidgets import QMessageBox
 from helpers.log_exception_to_file import log_exception_to_file
 
 
