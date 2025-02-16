@@ -1,8 +1,6 @@
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QSizePolicy
+from PySide6.QtWidgets import QWidget, QVBoxLayout
 from PySide6.QtCore import Qt, Signal
 from ui.buttons.close_btn import close_btn
-from ui.content_layout.content_layout import content_layout
-from ui.effects.ImageSlideshow import ImageSlideshow
 from ui.utils.apply_bg_wideg_style import apply_bg_wideg_style
 from ui.content_layout.TextContainerWidget import TextContainerWidget
 
