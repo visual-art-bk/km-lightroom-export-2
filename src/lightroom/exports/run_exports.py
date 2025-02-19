@@ -52,40 +52,48 @@ def run_exports(lightroom: WindowSpecification, check_stop_flag):
     if check_stop_flag("[내보내기 위치] 자동화 전 작업관리자 실행으로 자동화 중단"):
         return False
     else:
-        export_location(export_window=export_window, app_state=app_state)
+        export_location(
+            export_window=export_window,
+            app_state=app_state,
+            check_stop_flag=check_stop_flag,
+        )
 
     if check_stop_flag(
         "[파일이름 지정하기기] 자동화화 전 작업관리자 실행으로 자동화 중단"
     ):
         return False
     else:
-        specs_filename(export_window=export_window)
+        specs_filename(export_window=export_window, check_stop_flag=check_stop_flag)
 
     if check_stop_flag("[비디오] 자동화 전 작업관리자 실행으로 자동화 중단"):
         return False
     else:
         # 내보내기에 필요한 메뉴 아니지만,
         # 자동화 시야를 가리기 때문에 메뉴 닫음.
-        collapse_video_opt(export_window=export_window)
+        collapse_video_opt(export_window=export_window, check_stop_flag=check_stop_flag)
 
     if check_stop_flag("[파일 설정] 자동화 전 작업관리자 실행으로 자동화 중단"):
         return False
     else:
-        set_file(export_window=export_window)
+        set_file(export_window=export_window, check_stop_flag=check_stop_flag)
 
-    if check_stop_flag("[collapse_credentials] 자동화 전 작업관리자 실행으로 자동화 중단"):
+    if check_stop_flag(
+        "[collapse_credentials] 자동화 전 작업관리자 실행으로 자동화 중단"
+    ):
         return False
-    else: 
+    else:
         # 내보내기에 필요한 메뉴 아니지만,
         # 자동화 시야를 가리기 때문에 메뉴 닫음.
-        collapse_credentials_opt(export_window=export_window)
+        collapse_credentials_opt(export_window=export_window, check_stop_flag=check_stop_flag)
 
     if check_stop_flag("[이미지 크기 조정] 자동화 전 작업관리자 실행으로 자동화 중단"):
         return False
     else:
-        img_size_adjust(export_window=export_window)
+        img_size_adjust(export_window=export_window, check_stop_flag=check_stop_flag)
 
-    if check_stop_flag("[내보내기 버튼 클릭] 자동화 전 작업관리자 실행으로 자동화 중단"):
+    if check_stop_flag(
+        "[내보내기 버튼 클릭] 자동화 전 작업관리자 실행으로 자동화 중단"
+    ):
         return False
     else:
         export_button = export_window.child_window(

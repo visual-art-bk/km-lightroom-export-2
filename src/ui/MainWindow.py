@@ -2,14 +2,9 @@ from constants import MAIN_WINDOW_BG_COLOR
 from PySide6.QtWidgets import QMessageBox
 from PySide6.QtWidgets import (
     QMainWindow,
-    QLabel,
-    QLineEdit,
-    QPushButton,
     QMessageBox,
     QVBoxLayout,
     QWidget,
-    QHBoxLayout,
-    QGraphicsDropShadowEffect,
 )
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QIcon

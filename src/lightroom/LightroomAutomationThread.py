@@ -25,6 +25,7 @@ class LightroomAutomationThread(QThread):
     def __init__(self, lock_user_input):
         super().__init__()
         self.lock_user_input = lock_user_input
+        self.stop_flag_count = 0
         self.stop_flag = False  # ✅ 자동화 중지 플래그
         self.task_detector = TaskManagerDetector(self.stop_automation)
 
@@ -45,9 +46,15 @@ class LightroomAutomationThread(QThread):
         self.quit()
 
     def check_stop_flag(self, context=''):
+        if self.stop_flag_count == 1:
+            print('작업관리자 실행으로 인한 자동화 중단 감지를 이미 실행했습니다.')
+            self.stop_flag = True
+            return self.stop_flag
+        
         if self.stop_flag == True:
             print(f"⛔ 자동화 중단 감지! 실행 중지 {context}")
             self.failed.emit(True)
+            self.stop_flag_count = 1
             return self.stop_flag
         
 

@@ -1,4 +1,3 @@
-
 from pywinauto import WindowSpecification
 from lightroom.utils.select_ui import select_ui
 from lightroom.utils.check_toggle import check_toggle
@@ -32,12 +31,14 @@ from lightroom.utils.check_main_menu import check_main_menu
 MAIN_TITLE = "내보내기 위치"
 
 
-def export_location(export_window: WindowSpecification, app_state):
+def export_location(export_window: WindowSpecification, app_state, check_stop_flag):
     win_specs = check_main_menu(export_window=export_window, main_title=MAIN_TITLE)
 
     collapsible_selection = win_specs["col"]
     export_opt_of_window = win_specs["main_menu"]
-    
+
+    if check_stop_flag("[내보내기 위치] 자동화 전 작업관리자 실행으로 자동화 중단"):
+        return False
     combobox = select_ui(
         win_specs=collapsible_selection,
         title="내보낼 위치:",
@@ -45,6 +46,8 @@ def export_location(export_window: WindowSpecification, app_state):
         found_index=0,
     )
 
+    if check_stop_flag("[내보내기 위치] 자동화 전 작업관리자 실행으로 자동화 중단"):
+        return False
     combobox.select("특정 폴더")
 
     checkbox_sub_folder = select_ui(
@@ -53,12 +56,16 @@ def export_location(export_window: WindowSpecification, app_state):
         win_specs=export_window,
     )
 
+    if check_stop_flag("[내보내기 위치] 자동화 전 작업관리자 실행으로 자동화 중단"):
+        return False
     toggle_state = check_toggle(win_specs=checkbox_sub_folder)
     if toggle_state == False:
         checkbox_sub_folder.click()
 
-    edit_field = export_window.child_window(control_type="Edit", found_index=0)
 
+    edit_field = export_window.child_window(control_type="Edit", found_index=0)
+    if check_stop_flag("[내보내기 위치] 자동화 전 작업관리자 실행으로 자동화 중단"):
+        return False
     edit_field.set_text(f"{app_state.username}{app_state.phone_number}")
 
     export_opt_of_window.click_input()

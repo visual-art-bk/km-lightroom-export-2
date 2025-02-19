@@ -9308,3 +9308,254 @@ Ctrl + Alt + Delete 감지로 자동화 강제 중단
 
 ============================================================
 
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 11:38:57
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:04:31
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:08:48
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:08:51
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:08:51
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:08:51
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:09:07
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:09:08
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:12:26
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:13:24
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:14:50
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:15:50
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:15:51
+============================================================
+Lightroom 자동화 실패: (2, 'SetCursorPos', '지정된 파일을 찾을 수 없습니다.')
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 85, in run
+    run_exports(lightroom=lightroom, check_stop_flag=self.check_stop_flag)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 66, in run_exports
+    specs_filename(export_window=export_window, check_stop_flag=check_stop_flag)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2/src\lightroom\exports\specs_filename\specs_filename.py", line 10, in specs_filename
+    win_specs = check_main_menu(export_window=export_window, main_title=MAIN_TITLE)
+  File "C:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2/src\lightroom\utils\check_main_menu.py", line 58, in check_main_menu
+    export_opt_of_window.click_input()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\base_wrapper.py", line 774, in click_input
+    _perform_click_input(button, coords, double, button_down, button_up,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         wheel_dist=wheel_dist, pressed=pressed,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         key_down=key_down, key_up=key_up)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 137, in _perform_click_input
+    _set_cursor_pos((coords[0], coords[1]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 64, in _set_cursor_pos
+    raise exc
+  File "c:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 59, in _set_cursor_pos
+    win32api.SetCursorPos(coords)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+pywintypes.error: (2, 'SetCursorPos', '지정된 파일을 찾을 수 없습니다.')
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:16:15
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:16:17
+============================================================
+Lightroom 자동화 실패: There is no active desktop required for moving mouse cursor!
+
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "c:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 59, in _set_cursor_pos
+    win32api.SetCursorPos(coords)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+pywintypes.error: (0, 'SetCursorPos', 'No error message is available')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 85, in run
+    run_exports(lightroom=lightroom, check_stop_flag=self.check_stop_flag)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 73, in run_exports
+    collapse_video_opt(export_window=export_window, check_stop_flag=check_stop_flag)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2/src\lightroom\exports\video_opt\collapse_video_opt.py", line 10, in collapse_video_opt
+    close_needless_menu(export_window=export_window, main_title=MAIN_TITLE)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2/src\lightroom\utils\close_needless_menu.py", line 47, in close_needless_menu
+    export_opt_of_window.click_input()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\base_wrapper.py", line 774, in click_input
+    _perform_click_input(button, coords, double, button_down, button_up,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         wheel_dist=wheel_dist, pressed=pressed,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         key_down=key_down, key_up=key_up)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 137, in _perform_click_input
+    _set_cursor_pos((coords[0], coords[1]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 62, in _set_cursor_pos
+    raise RuntimeError("There is no active desktop required for moving mouse cursor!\n")
+RuntimeError: There is no active desktop required for moving mouse cursor!
+
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:17:59
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:19:21
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:19:22
+============================================================
+Lightroom 자동화 실패: (2, 'SetCursorPos', '지정된 파일을 찾을 수 없습니다.')
+
+🔍 [Traceback Details]:
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2/src\lightroom\LightroomAutomationThread.py", line 85, in run
+    run_exports(lightroom=lightroom, check_stop_flag=self.check_stop_flag)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2/src\lightroom\exports\run_exports.py", line 87, in run_exports
+    collapse_credentials_opt(export_window=export_window, check_stop_flag=check_stop_flag)
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2/src\lightroom\exports\content_credentials_opt\collapse_credentials_opt.py", line 11, in collapse_credentials_opt
+    close_needless_menu(export_window=export_window, main_title=MAIN_TITLE)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2/src\lightroom\utils\close_needless_menu.py", line 47, in close_needless_menu
+    export_opt_of_window.click_input()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "c:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\base_wrapper.py", line 774, in click_input
+    _perform_click_input(button, coords, double, button_down, button_up,
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         wheel_dist=wheel_dist, pressed=pressed,
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                         key_down=key_down, key_up=key_up)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 137, in _perform_click_input
+    _set_cursor_pos((coords[0], coords[1]))
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 64, in _set_cursor_pos
+    raise exc
+  File "c:\Users\USER\Documents\code\exp-2\main\km-lightroom-export-2\myenv\Lib\site-packages\pywinauto\mouse.py", line 59, in _set_cursor_pos
+    win32api.SetCursorPos(coords)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+pywintypes.error: (2, 'SetCursorPos', '지정된 파일을 찾을 수 없습니다.')
+
+============================================================
+
+
+============================================================
+📌 [오류 발생 시각]: 2025-02-19 12:21:25
+============================================================
+Ctrl + Alt + Delete 감지로 자동화 강제 중단
+
+============================================================
+
