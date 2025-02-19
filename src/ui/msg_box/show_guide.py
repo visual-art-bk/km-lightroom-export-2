@@ -5,7 +5,7 @@ from helpers.log_exception_to_file import log_exception_to_file
 
 
 def show_guide(parent):
-    file_path = "안내메세지.txt"  # 루트 디렉토리에 있는 파일
+    file_path = "메시지/안내메세지.txt"  # 루트 디렉토리에 있는 파일
 
     try:
         # 파일에서 메시지 읽기
