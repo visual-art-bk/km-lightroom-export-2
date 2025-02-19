@@ -85,7 +85,7 @@ class LightroomAutomationThread(QThread):
             self.finished.emit(True)
 
             if self.lock_user_input == True or self.stop_flag == True:
-                lock_mouse_keyboard()
+                unlock_mouse_keyboard()
 
         except Exception as e:
             error_message = f"Lightroom 자동화 실패: {str(e)}"
